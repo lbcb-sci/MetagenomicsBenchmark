@@ -1,4 +1,8 @@
-All the results and analysis files are in the following format <database>_<dataset>.<extension>
+
+Metagenomics benchmark.
+
+
+All the results and analysis files are in the following format "<database_<dataset>.<extension>"
 
 <database>:
  - default - database downloaded with or provided by the tools
@@ -35,10 +39,10 @@ Contents:
 6. nodes.dmp and names.dmp taxonomy files
 
 7. summary_b.txt, summary_a.txt, database_summary.txt
- - summary files of the databases, copied from the refseq Archaea (_a) and Bacteria (_b) databases. Two a and b summaries are merged in database_summary.txt
+ - summary files of the databases, copied from the refseq Archaea (a) and Bacteria (b) databases. Two a and b summaries are merged in database_summary.txt.
 
 8. genome_sizes_a.txt, genome_sizes_b.txt, database_genome_sizes.txt
- - average lengths of genomes calculated from the database sequences for Arcahea (_a), Bacteria (_b) and both (database_genome_sizes).
+ - average lengths of genomes calculated from the database sequences for Arcahea (a), Bacteria (b) and both (database_genome_sizes).
 
 9. all_tax_in_report
  - The collection of tax ids in all reports
