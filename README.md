@@ -1,5 +1,5 @@
 
-Metagenomics benchmark.
+**Metagenomics benchmark.**
 
 
 All the results and analysis files are in the following format database_dataset.extension
@@ -28,7 +28,7 @@ extension:
 
 
 
-Contents:
+**Contents:**
 
 1. truth - ground truth files in .f2 format
 2. results - results of the classifications for evey tool: kraken, clark, metamaps, megan and centrifuge
@@ -50,7 +50,7 @@ Contents:
 10. time-memory
  - files with execution time and memory consumption
 
-Scripts:
+**Scripts:**
  
  - parse_tool_output.py - parses classification output files from tools and produces read_id to tax_id mappings in .stat file
  	- arguments: <tool> <results_path> <fileout>
