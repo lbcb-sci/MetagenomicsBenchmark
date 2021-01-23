@@ -1,19 +1,19 @@
 
-Metagenomics benchmark.
+**Metagenomics benchmark.**
 
 
-All the results and analysis files are in the following format "<database_<dataset>.<extension>"
+All the results and analysis files are in the following format database_dataset.extension
 
-<database>:
+database:
  - default - database downloaded with or provided by the tools
  - custom - database built from refseq Bacteria and Archaea genomes
  - human - same database as custom + human genome
 
-<dataset>:
+dataset:
  - ont_x <x = [1:2]> - Mock and 30p ont datasets
  - pb_x <x = [1:4]> - 4 pacbio datasets
 
-<extension>:
+extension:
  - .stat - file extension for classification results obtained after processing of classificators results
  	- each row in the .stat file is in format: <is_classified>	<read_id>	<tax_id>	<length>	<percentage>
  	- <is_classified> - C for classified read_id, U for unclassified
@@ -28,7 +28,7 @@ All the results and analysis files are in the following format "<database_<datas
 
 
 
-Contents:
+**Contents:**
 
 1. truth - ground truth files in .f2 format
 2. results - results of the classifications for evey tool: kraken, clark, metamaps, megan and centrifuge
@@ -50,7 +50,7 @@ Contents:
 10. time-memory
  - files with execution time and memory consumption
 
-Scripts:
+**Scripts:**
  
  - parse_tool_output.py - parses classification output files from tools and produces read_id to tax_id mappings in .stat file
  	- arguments: <tool> <results_path> <fileout>
