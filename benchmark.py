@@ -1,6 +1,7 @@
 import parse_tool_output
 import analize_tool_output
 import analize_results
+import analize_true_positives
 import os
 import sys
 
@@ -65,3 +66,4 @@ if __name__ == '__main__':
 					dataset = tech + "_" + str(num)
 					print("Analysing: " + str(database) + " - " + dataset)
 					analize_results.main_func(root_cleaned, root_reports, dataset, database, names_lines)
+					analize_true_positives.main_func(root_cleaned, root_reports, dataset, database, names_lines)

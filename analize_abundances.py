@@ -240,7 +240,7 @@ def main_func(dataset, database, genome_sizes_filename, reads_sizes, root_cleane
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 7:
+    if len(sys.argv) < 8:
         print("Script requires 8 arguments")
         exit()
     names_file = open(sys.argv[7], "r")

@@ -5,9 +5,7 @@ from Bio import SeqIO
 
 if __name__ == '__main__':
 	tools = ["kraken", "centrifuge", "clark", "metamaps", "megan"]
-	# tools = ["kraken"]
 	databases = ["default", "custom", "human"]
-	# databases = ["default"]
 	technologies = ["pb", "ont"]
 	root_cleaned = "tax_cleaned_results/"
 	roots_abundances = "abundances_reports"

@@ -25,30 +25,35 @@ extension:
  	- each row in the .f2 file is in format: <read_id>	<tax_id>	<percentage>	<level>
  	- <level> - taxon level: species, genus, family...
  - .report - report file, every row contains number of reads classified to a taxon: <tax_id>	<species_name>	<true_number>	<kraken_number>	<centrifuge_number>	<clark_number>	<metamaps_number>	<megan_number>
-
+ - .report_truth - report file, same as .report, but with only true positive results
 
 
 **Contents:**
+
+Download the supporting files from the following link: 
+The supporting files contain:
 
 1. truth - ground truth files in .f2 format
 2. results - results of the classifications for evey tool: kraken, clark, metamaps, megan and centrifuge
 3. parsed_results - results of the classification after the parsing of tools outputs, stored in .stat format
 4. tax_cleaned_results - results of the classitifation after the parsing of .stat files, stored in .f2 format
 5. reports - resulting reports stored in .report format
+6. abundances_reports - resulting reports of abundance comparison stored in .report format
+7. nodes.dmp and names.dmp taxonomy files
+8. summary_b.txt, summary_a.txt, database_summary.txt
+ - summary files of the databases, copied from the refseq Archaea (a) and Bacteria (b) databases. Two a and b summaries are merged in database_summary.txt
 
-6. nodes.dmp and names.dmp taxonomy files
 
-7. summary_b.txt, summary_a.txt, database_summary.txt
- - summary files of the databases, copied from the refseq Archaea (a) and Bacteria (b) databases. Two a and b summaries are merged in database_summary.txt.
+Along with the supporting files, already uploaded files are:
 
-8. genome_sizes_a.txt, genome_sizes_b.txt, database_genome_sizes.txt
+9. genome_sizes_a.txt, genome_sizes_b.txt, database_genome_sizes.txt
  - average lengths of genomes calculated from the database sequences for Arcahea (a), Bacteria (b) and both (database_genome_sizes).
-
-9. all_tax_in_report
+10. all_tax_in_report
  - The collection of tax ids in all reports
 
-10. time-memory
- - files with execution time and memory consumption
+Some of these files are used to calculate reports: 1, 2, 7, 8, 9 and 10. And others are the results of the analysis: 3, 4, 5 and 6. 
+
+In order to execute the analysis extract the supporting file archive into the root directory of this project.
 
 **Scripts:**
  
@@ -72,6 +77,8 @@ extension:
 		- <dataset> - name of the dataset
 		- <database> - name of the database
 		- <names_file> - path to the names.dmp file
+
+- analize_true_positives.py - similar to analize_results.py but it only calculates true positive report. The input argumates are the same as for the analize_results.py.
 
 - benchmark.py - script that executes whole analysis pipeline, for every tool it executes parse_tool_output, then analize_tool_output and then for every dataset and database it generates reports with analize_results
 	- arguments: <mode> there are 4 modes in which this script can be run:
@@ -100,9 +107,21 @@ extension:
 		- <summary_file> - database summary file, for this example database_summary.txt
 		- <outfile> - path to the resulting output file where the lengths of the missing tax ids are stored
 
-- analize_abundances.py - script that prints the .report file containing analysis of abundances
+- analize_abundances.py - script that prints the .report file containing analysis of abundances for one dataset and one database. It generates .report file but with abundance estimations for species. The abundance of the species is calculated as the total sum of the reads classified to that species, divided by the average length of the genome of that species.
+	- arguments: <dataset> <database> <genome_sizes_filename> <path_to_dataset> <root_cleanded> <root_abundances> <names_file> <dataset_format>
+		- <dataset> - name of the dataset
+		- <database> - name of the database
+		- <genome_sizes_filename> - path to the file that contains the lengths of genomes
+		- <path_to_dataset> - path to the reads
+		- <root_cleanded> - path to the root folder that contains .f2 files
+		- <root_abundances> - path to the root folder where the abundance reports are stored
+		- <names_file> - path to the names.dmp file
+		- <dataset_format> - format of the dataset, fastq or fasta
 
-
+- abundances.py - script that calculates all the abundance reports for all the datasets and databases.
+	- arguments: <genome_sizes_filename> <path_to_datasets>
+		- <genome_sizes_filename> - path to the file that contains the lengths of genomes
+		- <path_to_datasets> - path to where the all the datasets are stored
 
 
 
