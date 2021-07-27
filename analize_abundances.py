@@ -5,9 +5,8 @@ from os.path import isfile, join
 from Bio import SeqIO
 
 def main_func(dataset, database, genome_sizes_filename, reads_sizes, root_cleaned, root_abundances, names_lines):
-    tools = ["truth", "metamaps", "kraken", "clark", "centrifuge", "megan"]
 
-    print("main_func")
+    tools = ["truth", "kraken", "centrifuge", "clark", "metamaps", "megan", "minimap2", "minimap", "ram", "clark-s"]
 
     genome_sizes_file = open(genome_sizes_filename, "r")
     genome_sizes_lines = genome_sizes_file.readlines()
@@ -17,36 +16,22 @@ def main_func(dataset, database, genome_sizes_filename, reads_sizes, root_cleane
         parts = re.split(r'\t+', line.strip())
         genome_sizes[parts[0].strip()] = parts[1].strip()
 
-
     print("genome_sizes")
 
-    names = {}
+    taxonomy = {}
     for line in names_lines:
         parts = re.split(r'\|+', line.strip())
         if parts[3].strip() == "scientific name":
-            names[parts[0].strip()] = parts[1].strip()
+            taxonomy[parts[0].strip()] = parts[1].strip()
 
     print("names")
 
-    # print(path_to_dataset)
-    # reads_sizes = {}
-    # countt = 0
-    # for record in SeqIO.parse(path_to_dataset, "fastq"):
-    #     if countt % 1000 == 0:
-    #         print(countt)
-    #     countt += 1
-    #     reads_sizes[record.id] = len(record.seq)
-
-    print("reads_sizes")
-
     results = {}
-
-    print("going tools")
 
     for tool in tools:
         filename = root_cleaned + "/" + tool + "/" + database + "_" + dataset + ".f2"
         if tool == "truth":
-            filename = "truth/" + database + "_" + dataset
+            filename = "truth2/" + database + "_" + dataset
         file_read = open(filename, "r") 
 
         tool_result = {}
@@ -58,6 +43,7 @@ def main_func(dataset, database, genome_sizes_filename, reads_sizes, root_cleane
             tax_id = parts[1].strip()
             percentage = float(parts[2].strip())
             rank = parts[3].strip()
+
             if rank == "species":
                 if read_id in reads_sizes:
                     if tax_id in tool_result:
@@ -66,175 +52,64 @@ def main_func(dataset, database, genome_sizes_filename, reads_sizes, root_cleane
                         tool_result[tax_id] = (percentage * reads_sizes[read_id])
 
         tool_summary = {}
+        tool_sum = 0.0
         for key in tool_result:
             if key in genome_sizes:
-                tool_summary[key] = float(tool_result[key]) / float(genome_sizes[key])
+                val_x = float(tool_result[key]) / (float(genome_sizes[key]) * 1000000)
+                tool_sum += val_x
+            else:
+                print("ERROR !1 " + str(key) + "\t" + str(tool))
+        for key in tool_result:
+            if key in genome_sizes:
+                val_x = float(tool_result[key]) / (float(genome_sizes[key]) * 1000000)
+                tool_summary[key] = (val_x / tool_sum) * 100.0
         results[tool] = tool_summary
+
+        if tool == "truth" and (dataset == "9" or dataset == "10" or dataset == "11" or dataset == "12"):
+            filename = "truth2/" + database + "_" + dataset + ".f3"
+            file = open(filename, "r") 
+            lines = file.readlines()
+
+            tool_results = {}
+            for line in lines:
+                parts = re.split(r'\t+', line.strip())
+                tax_id = parts[0].strip()
+                percentage = float(parts[1].strip())
+                if tax_id in tool_results:
+                    tool_results[tax_id] += percentage
+                else:
+                    tool_results[tax_id] = percentage
+
+            results[tool] = tool_results
 
     analysis = {}
 
-    print("going results")
-
-    for elem in results["truth"]:
-        result_list = []
-        result_list.append(results["truth"][elem])
-        if elem in results["kraken"]:
-            result_list.append(results["kraken"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["centrifuge"]:
-            result_list.append(results["centrifuge"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["clark"]:
-            result_list.append(results["clark"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["metamaps"]:
-            result_list.append(results["metamaps"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["megan"]:
-            result_list.append(results["megan"][elem])
-        else:
-            result_list.append(0)
-        analysis[elem] = result_list
-
-
-    for elem in results["kraken"]:
-        result_list = []
-        if elem in results["truth"]:
-            result_list.append(results["truth"][elem])
-        else:
-            result_list.append(0)
-        result_list.append(results["kraken"][elem])
-        if elem in results["centrifuge"]:
-            result_list.append(results["centrifuge"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["clark"]:
-            result_list.append(results["clark"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["metamaps"]:
-            result_list.append(results["metamaps"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["megan"]:
-            result_list.append(results["megan"][elem])
-        else:
-            result_list.append(0)
-        analysis[elem] = result_list
-
-    for elem in results["centrifuge"]:
-        result_list = []
-        if elem in results["truth"]:
-            result_list.append(results["truth"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["kraken"]:
-            result_list.append(results["kraken"][elem])
-        else:
-            result_list.append(0)
-        result_list.append(results["centrifuge"][elem])
-        if elem in results["clark"]:
-            result_list.append(results["clark"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["metamaps"]:
-            result_list.append(results["metamaps"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["megan"]:
-            result_list.append(results["megan"][elem])
-        else:
-            result_list.append(0)
-        analysis[elem] = result_list
-
-    for elem in results["clark"]:
-        result_list = []
-        if elem in results["truth"]:
-            result_list.append(results["truth"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["kraken"]:
-            result_list.append(results["kraken"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["centrifuge"]:
-            result_list.append(results["centrifuge"][elem])
-        else:
-            result_list.append(0)
-        result_list.append(results["clark"][elem])
-        if elem in results["metamaps"]:
-            result_list.append(results["metamaps"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["megan"]:
-            result_list.append(results["megan"][elem])
-        else:
-            result_list.append(0)
-        analysis[elem] = result_list
-
-
-    for elem in results["metamaps"]:
-        result_list = []
-        if elem in results["truth"]:
-            result_list.append(results["truth"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["kraken"]:
-            result_list.append(results["kraken"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["centrifuge"]:
-            result_list.append(results["centrifuge"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["clark"]:
-            result_list.append(results["clark"][elem])
-        else:
-            result_list.append(0)
-        result_list.append(results["metamaps"][elem])
-        if elem in results["megan"]:
-            result_list.append(results["megan"][elem])
-        else:
-            result_list.append(0)
-        analysis[elem] = result_list
-
-    for elem in results["megan"]:
-        result_list = []
-        if elem in results["truth"]:
-            result_list.append(results["truth"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["kraken"]:
-            result_list.append(results["kraken"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["centrifuge"]:
-            result_list.append(results["centrifuge"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["clark"]:
-            result_list.append(results["clark"][elem])
-        else:
-            result_list.append(0)
-        if elem in results["metamaps"]:
-            result_list.append(results["metamaps"][elem])
-        else:
-            result_list.append(0)
-        result_list.append(results["megan"][elem])
-        analysis[elem] = result_list
+    for toool in tools:
+        for elem in results[toool]:
+            report_list = []
+            for toool_inner in tools:
+                if toool_inner == toool:
+                    report_list.append(results[toool][elem])
+                else:
+                    if elem in results[toool_inner]:
+                        report_list.append(results[toool_inner][elem])
+                    else:
+                        report_list.append(0)
+            analysis[elem] = report_list
 
     filename = root_abundances + "/" + database + "_" + dataset + ".ab"
     file_write = open(filename, "w") 
 
-
-    print("writing")
-
     for res in analysis:
-        file_write.write(res + "\t" + names[res] + "\t" + str(float(analysis[res][0])) + "\t" + str(float(analysis[res][1])) + "\t" + str(float(analysis[res][2])) + "\t" + str(float(analysis[res][3])) + "\t" + str(float(analysis[res][4])) + "\t" + str(float(analysis[res][5])) + "\n")
+        ime = "x"
+        if res in taxonomy:
+            ime = taxonomy[res]
+        rezulting_string = res + "\t" + ime + "\t"
+
+        for smthng in analysis[res]:
+            rezulting_string += str(float(smthng)) + "\t"
+        rezulting_string += "\n"
+        file_write.write(rezulting_string)
 
     file_write.close()
 

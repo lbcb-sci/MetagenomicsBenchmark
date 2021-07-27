@@ -3,7 +3,7 @@ import re
 import os
 
 def main_func(root_cleaned, root_reports, dataset, database, names_lines):
-    tools = ["truth", "metamaps", "kraken", "clark", "centrifuge", "megan"]
+    tools = ["truth", "kraken", "centrifuge", "clark", "metamaps", "megan", "minimap2", "minimap", "ram", "clark-s"]
 
     taxonomy = {}
     for line in names_lines:
@@ -13,7 +13,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
 
     results = {}
 
-    filename = "truth/" + database + "_" + dataset
+    filename = "truth2/" + database + "_" + dataset
     file_read = open(filename, "r") 
     truth_res = {}
     lines = file_read.readlines()
@@ -28,7 +28,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
     for tool in tools:
         filename = root_cleaned + tool + "/" + database + "_" + dataset + ".f2"
         if tool == "truth":
-            filename = "truth/" + database + "_" + dataset
+            filename = "truth2/" + database + "_" + dataset
         file = open(filename, "r") 
         lines = file.readlines()
         
@@ -50,163 +50,32 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
 
     analysis = {}
 
-    for elem in results["truth"]:
-        report_list = []
-        report_list.append(results["truth"][elem])
-        if elem in results["kraken"]:
-            report_list.append(results["kraken"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["centrifuge"]:
-            report_list.append(results["centrifuge"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["clark"]:
-            report_list.append(results["clark"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["metamaps"]:
-            report_list.append(results["metamaps"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["megan"]:
-            report_list.append(results["megan"][elem])
-        else:
-            report_list.append(0)
-        analysis[elem] = report_list
-
-
-    for elem in results["kraken"]:
-        report_list = []
-        if elem in results["truth"]:
-            report_list.append(results["truth"][elem])
-        else:
-            report_list.append(0)
-        report_list.append(results["kraken"][elem])
-        if elem in results["centrifuge"]:
-            report_list.append(results["centrifuge"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["clark"]:
-            report_list.append(results["clark"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["metamaps"]:
-            report_list.append(results["metamaps"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["megan"]:
-            report_list.append(results["megan"][elem])
-        else:
-            report_list.append(0)
-        analysis[elem] = report_list
-
-    for elem in results["centrifuge"]:
-        report_list = []
-        if elem in results["truth"]:
-            report_list.append(results["truth"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["kraken"]:
-            report_list.append(results["kraken"][elem])
-        else:
-            report_list.append(0)
-        report_list.append(results["centrifuge"][elem])
-        if elem in results["clark"]:
-            report_list.append(results["clark"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["metamaps"]:
-            report_list.append(results["metamaps"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["megan"]:
-            report_list.append(results["megan"][elem])
-        else:
-            report_list.append(0)
-        analysis[elem] = report_list
-
-    for elem in results["clark"]:
-        report_list = []
-        if elem in results["truth"]:
-            report_list.append(results["truth"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["kraken"]:
-            report_list.append(results["kraken"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["centrifuge"]:
-            report_list.append(results["centrifuge"][elem])
-        else:
-            report_list.append(0)
-        report_list.append(results["clark"][elem])
-        if elem in results["metamaps"]:
-            report_list.append(results["metamaps"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["megan"]:
-            report_list.append(results["megan"][elem])
-        else:
-            report_list.append(0)
-        analysis[elem] = report_list
-
-
-    for elem in results["metamaps"]:
-        report_list = []
-        if elem in results["truth"]:
-            report_list.append(results["truth"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["kraken"]:
-            report_list.append(results["kraken"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["centrifuge"]:
-            report_list.append(results["centrifuge"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["clark"]:
-            report_list.append(results["clark"][elem])
-        else:
-            report_list.append(0)
-        report_list.append(results["metamaps"][elem])
-        if elem in results["megan"]:
-            report_list.append(results["megan"][elem])
-        else:
-            report_list.append(0)
-        analysis[elem] = report_list
-
-    for elem in results["megan"]:
-        report_list = []
-        if elem in results["truth"]:
-            report_list.append(results["truth"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["kraken"]:
-            report_list.append(results["kraken"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["centrifuge"]:
-            report_list.append(results["centrifuge"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["clark"]:
-            report_list.append(results["clark"][elem])
-        else:
-            report_list.append(0)
-        if elem in results["metamaps"]:
-            report_list.append(results["metamaps"][elem])
-        else:
-            report_list.append(0)
-        report_list.append(results["megan"][elem])
-        analysis[elem] = report_list
+    for toool in tools:
+        for elem in results[toool]:
+            report_list = []
+            for toool_inner in tools:
+                if toool_inner == toool:
+                    report_list.append(results[toool][elem])
+                else:
+                    if elem in results[toool_inner]:
+                        report_list.append(results[toool_inner][elem])
+                    else:
+                        report_list.append(0)
+            analysis[elem] = report_list
 
     filename = root_reports + database + "_" + dataset + ".report_truth"
     file_write = open(filename, "w") 
 
     for res in analysis:
-        file_write.write(res + "\t" + taxonomy[res] + "\t" + str(int(analysis[res][0])) + "\t" + str(int(analysis[res][1])) + "\t" + str(int(analysis[res][2])) + "\t" + str(int(analysis[res][3])) + "\t" + str(int(analysis[res][4])) + "\t" + str(int(analysis[res][5])) + "\n")
+        ime = "x"
+        if res in taxonomy:
+            ime = taxonomy[res]
+        rezulting_string = res + "\t" + ime + "\t"
+
+        for smthng in analysis[res]:
+            rezulting_string += str(int(smthng)) + "\t"
+        rezulting_string += "\n"
+        file_write.write(rezulting_string)
 
     file_write.close()
 

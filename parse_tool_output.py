@@ -59,6 +59,23 @@ def analyse_clark(lines, fileout):
         rows.append(row)
     write_rows(rows, fileout)
 
+def analyse_clark_s(lines, fileout):
+    read_first_line = False
+    rows = []
+    for line in lines:
+        if read_first_line == False:
+            read_first_line = True
+            continue;
+        parts = re.split(r'\,+', line.strip())
+        tax_id = parts[3].strip()
+        classified = "C"
+        if tax_id == "NA":
+            classified = "U"
+        row = Row(classified, parts[0].strip(), tax_id, parts[1].strip(), 1.0)
+        rows.append(row)
+    write_rows(rows, fileout)
+
+
 def analyse_kraken(lines, fileout):
     rows = []
     for line in lines:
@@ -76,16 +93,15 @@ def analyse_megan(lines, fileout):
     write_rows(rows, fileout)
 
 def main_func(tool, results_path, fileout):
-    # tool = sys.argv[1]
-    # results_path = sys.argv[2]
     results_file = open(results_path, "r") 
     results_lines = results_file.readlines()
-    # fileout = sys.argv[3]
 
     if tool == "kraken":
         analyse_kraken(results_lines, fileout)
     elif tool == "clark":
         analyse_clark(results_lines, fileout)
+    elif tool == "clark-s":
+        analyse_clark_s(results_lines, fileout)
     elif tool == "centrifuge":
         analyse_centrifuge(results_lines, fileout)
     elif tool == "metamaps":
