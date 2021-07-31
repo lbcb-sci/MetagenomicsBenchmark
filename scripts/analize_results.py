@@ -3,7 +3,7 @@ import re
 import os
 
 def main_func(root_cleaned, root_reports, dataset, database, names_lines):
-    tools = ["truth", "kraken", "centrifuge", "clark", "metamaps", "megan", "minimap2", "minimap", "ram", "clark-s"]
+    tools = ["truth", "kraken", "centrifuge", "clark", "metamaps", "megan", "minimapA", "minimapM", "ram", "clark-s"]
 
     taxonomy = {}
     for line in names_lines:
@@ -16,7 +16,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
     for tool in tools:
         filename = root_cleaned + tool + "/" + database + "_" + dataset + ".f2"
         if tool == "truth":
-            filename = "truth2/" + database + "_" + dataset
+            filename = "truth/" + database + "_" + dataset
         file = open(filename, "r") 
         lines = file.readlines()
         
@@ -35,8 +35,8 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
 
         results[tool] = tool_results
 
-    if tool == "truth" and (dataset == "9" or dataset == "10" or dataset == "11" or dataset == "12"):
-        filename = "truth2/" + database + "_" + dataset + ".f3"
+    if tool == "truth" and (dataset == "9" or dataset == "10" or dataset == "11"):
+        filename = "truth/" + database + "_" + dataset + ".f3"
         file = open(filename, "r") 
         lines = file.readlines()
 
@@ -54,15 +54,15 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
 
     analysis = {}
 
-    for toool in tools:
-        for elem in results[toool]:
+    for tool in tools:
+        for elem in results[tool]:
             report_list = []
-            for toool_inner in tools:
-                if toool_inner == toool:
-                    report_list.append(results[toool][elem])
+            for tool_inner in tools:
+                if tool_inner == tool:
+                    report_list.append(results[tool][elem])
                 else:
-                    if elem in results[toool_inner]:
-                        report_list.append(results[toool_inner][elem])
+                    if elem in results[tool_inner]:
+                        report_list.append(results[tool_inner][elem])
                     else:
                         report_list.append(0)
             analysis[elem] = report_list

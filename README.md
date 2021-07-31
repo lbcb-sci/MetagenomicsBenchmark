@@ -10,8 +10,9 @@ database:
  - human - same database as custom + human genome
 
 dataset:
- - ont_x <x = [1:2]> - Mock and 30p ont datasets
- - pb_x <x = [1:4]> - 4 pacbio datasets
+ - x <x = [1:2]> - Mock and 30p ont datasets
+ - x <x = [3:6]> - 4 pacbio datasets
+ - x <x = [7:8]> - 2 negative datasets
 
 extension:
  - .stat - file extension for classification results obtained after processing of classificators results
@@ -24,9 +25,9 @@ extension:
  - .f2 - file extension for cleaned classification results obtained after processing .stat files. All rows contain only classified reads.
  	- each row in the .f2 file is in format: <read_id>	<tax_id>	<percentage>	<level>
  	- <level> - taxon level: species, genus, family...
- - .report - report file, every row contains number of reads classified to a taxon: <tax_id>	<species_name>	<true_number>	<kraken_number>	<centrifuge_number>	<clark_number>	<metamaps_number>	<megan_number>
+ - .report - report file, every row contains number of reads classified to a taxon: <tax_id>	<species_name>	<true_number>	<kraken_number>	<centrifuge_number>	<clark_number>	<metamaps_number>	<megan_number>	<>
  - .report_truth - report file, same as .report, but with only true positive results
-
+ - .ab - abundance report file, every row contains relative abundance 
 
 **Contents:**
 

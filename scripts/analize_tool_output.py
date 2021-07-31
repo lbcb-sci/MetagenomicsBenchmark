@@ -22,7 +22,6 @@ def main_func(tool, results_path, nodes_lines, fileout):
         while not_found_resulting_tax_id:
             if parent in parents:
                 parent_rank = ranks[parent]
-                # if parent_rank == "species":
                 if parent_rank == "species":
                     not_found_resulting_tax_id = False
                     resulting_tax_id = parent

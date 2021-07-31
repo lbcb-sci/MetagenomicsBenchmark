@@ -1,0 +1,295 @@
+important link for metamaps instalation:
+https://github.com/DiltheyLab/MetaMaps/issues/20
+
+
+METAMAPS CUSTOM
+./cgmemtime/cgmemtime -o may-results/01_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq --maxmemory 150 -o may-results/01_metamaps_out
+./cgmemtime/cgmemtime -o may-results/02_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/02_silico-30p-human-70p-bac.fastq --maxmemory 150 -o may-results/02_metamaps_out
+./cgmemtime/cgmemtime -o may-results/03_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/03_silico-10-bacteria-100k-reads.fasta --maxmemory 150 -o may-results/03_metamaps_out
+./cgmemtime/cgmemtime -o may-results/04_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/04_silico-3-euka-bac-100k-reads.fastq --maxmemory 150 -o may-results/04_metamaps_out
+./cgmemtime/cgmemtime -o may-results/05_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/05_human-pathogen.fastq --maxmemory 150 -o may-results/05_metamaps_out
+./cgmemtime/cgmemtime -o may-results/06_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/06_50-bac-100k.fastq --maxmemory 150 -o may-results/06_metamaps_out
+./cgmemtime/cgmemtime -o may-results/08_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/08_negative2_10bac_shuffled_human_20k.fasta --maxmemory 150 -o may-results/08_metamaps_out
+./cgmemtime/cgmemtime -o may-results/09_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/09_zymo_pacbio.fastq --maxmemory 150 -o may-results/09_metamaps_out
+./cgmemtime/cgmemtime -o may-results/10_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/10_zymo_ont.fastq --maxmemory 150 -o may-results/10_metamaps_out
+./cgmemtime/cgmemtime -o may-results/11_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/11_SRR11606871_subsampled.fastq --maxmemory 150 -o may-results/11_metamaps_out
+
+./cgmemtime/cgmemtime -o may-results/01_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/01_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/02_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/02_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/03_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/03_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/04_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/04_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/05_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/05_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/06_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/06_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/08_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/08_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/09_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/09_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/10_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/10_metamaps_out --DB baza_g3/custom_4
+./cgmemtime/cgmemtime -o may-results/11_metamaps_time2 ./metamaps classify -t 12 --mappings may-results/11_metamaps_out --DB baza_g3/custom_4
+
+
+METAMAPS HUMAN
+./cgmemtime/cgmemtime -o may-results2/01_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq --maxmemory 150 -o may-results2/01_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/02_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/02_silico-30p-human-70p-bac.fastq --maxmemory 150 -o may-results2/02_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/03_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/03_silico-10-bacteria-100k-reads.fasta --maxmemory 150 -o may-results2/03_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/04_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/04_silico-3-euka-bac-100k-reads.fastq --maxmemory 150 -o may-results2/04_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/05_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/05_human-pathogen.fastq --maxmemory 150 -o may-results2/05_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/06_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/06_50-bac-100k.fastq --maxmemory 150 -o may-results2/06_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/08_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/08_negative2_10bac_shuffled_human_20k.fasta --maxmemory 150 -o may-results2/08_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/09_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/09_zymo_pacbio.fastq --maxmemory 150 -o may-results2/09_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/10_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/10_zymo_ont.fastq --maxmemory 150 -o may-results2/10_metamaps_out
+./cgmemtime/cgmemtime -o may-results2/11_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/human/DB.fa -q ../../../seqs/11_SRR11606871_subsampled.fastq --maxmemory 150 -o may-results2/11_metamaps_out
+
+./cgmemtime/cgmemtime -o may-results2/01_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/01_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/02_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/02_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/03_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/03_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/04_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/04_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/05_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/05_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/06_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/06_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/08_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/08_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/09_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/09_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/10_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/10_metamaps_out --DB baza_g3/human
+./cgmemtime/cgmemtime -o may-results2/11_metamaps_time2 ./metamaps classify -t 12 --mappings may-results2/11_metamaps_out --DB baza_g3/human
+
+
+CUSTOM CENTRIFUGE
+./cgmemtime/cgmemtime -o may-results/01_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -q ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -S may-results/01_centrifuge_out --report-file may-results/01_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/02_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -q ../../seqs/02_silico-30p-human-70p-bac.fastq -S may-results/02_centrifuge_out --report-file may-results/02_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/03_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -f ../../seqs/03_silico-10-bacteria-100k-reads.fasta -S may-results/03_centrifuge_out --report-file may-results/03_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/04_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -q ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -S may-results/04_centrifuge_out --report-file may-results/04_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/05_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -q ../../seqs/05_human-pathogen.fastq -S may-results/05_centrifuge_out --report-file may-results/05_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/06_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -q ../../seqs/06_50-bac-100k.fastq -S may-results/06_centrifuge_out --report-file may-results/06_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/08_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -f ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta -S may-results/08_centrifuge_out --report-file may-results/08_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/09_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -q ../../seqs/09_zymo_pacbio.fastq -S may-results/09_centrifuge_out --report-file may-results/09_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/10_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -q ../../seqs/10_zymo_ont.fastq -S may-results/10_centrifuge_out --report-file may-results/10_centrifuge_report
+./cgmemtime/cgmemtime -o may-results/11_centrifuge_time ./centrifuge -x g2_custom/custom -k 1 -p 12 -q ../../seqs/11_SRR11606871_subsampled.fastq -S may-results/11_centrifuge_out --report-file may-results/11_centrifuge_report
+
+
+HUMAN CENTRIFUGE
+./cgmemtime/cgmemtime -o may-results2/01_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -q ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -S may-results2/01_centrifuge_out --report-file may-results2/01_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/02_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -q ../../seqs/02_silico-30p-human-70p-bac.fastq -S may-results2/02_centrifuge_out --report-file may-results2/02_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/03_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -f ../../seqs/03_silico-10-bacteria-100k-reads.fasta -S may-results2/03_centrifuge_out --report-file may-results2/03_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/04_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -q ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -S may-results2/04_centrifuge_out --report-file may-results2/04_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/05_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -q ../../seqs/05_human-pathogen.fastq -S may-results2/05_centrifuge_out --report-file may-results2/05_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/06_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -q ../../seqs/06_50-bac-100k.fastq -S may-results2/06_centrifuge_out --report-file may-results2/06_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/08_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -f ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta -S may-results2/08_centrifuge_out --report-file may-results2/08_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/09_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -q ../../seqs/09_zymo_pacbio.fastq -S may-results2/09_centrifuge_out --report-file may-results2/09_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/10_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -q ../../seqs/10_zymo_ont.fastq -S may-results2/10_centrifuge_out --report-file may-results2/10_centrifuge_report
+./cgmemtime/cgmemtime -o may-results2/11_centrifuge_time ./centrifuge -x g_human/human -k 1 -p 12 -q ../../seqs/11_SRR11606871_subsampled.fastq -S may-results2/11_centrifuge_out --report-file may-results2/11_centrifuge_report
+
+
+CUSTOM KRAKEN
+./cgmemtime/cgmemtime -o may-results/01_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq --report may-results/01_kraken_report > may-results/01_kraken_out
+./cgmemtime/cgmemtime -o may-results/02_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/02_silico-30p-human-70p-bac.fastq --report may-results/02_kraken_report > may-results/02_kraken_out
+./cgmemtime/cgmemtime -o may-results/03_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/03_silico-10-bacteria-100k-reads.fasta --report may-results/03_kraken_report > may-results/03_kraken_out
+./cgmemtime/cgmemtime -o may-results/04_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/04_silico-3-euka-bac-100k-reads.fastq --report may-results/04_kraken_report > may-results/04_kraken_out
+./cgmemtime/cgmemtime -o may-results/05_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/05_human-pathogen.fastq --report may-results/05_kraken_report > may-results/05_kraken_out
+./cgmemtime/cgmemtime -o may-results/06_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/06_50-bac-100k.fastq --report may-results/06_kraken_report > may-results/06_kraken_out
+./cgmemtime/cgmemtime -o may-results/08_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta --report may-results/08_kraken_report > may-results/08_kraken_out
+./cgmemtime/cgmemtime -o may-results/09_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/09_zymo_pacbio.fastq --report may-results/09_kraken_report > may-results/09_kraken_out
+./cgmemtime/cgmemtime -o may-results/10_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/10_zymo_ont.fastq --report may-results/10_kraken_report > may-results/10_kraken_out
+./cgmemtime/cgmemtime -o may-results/11_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_custom ../../seqs/11_SRR11606871_subsampled.fastq --report may-results/11_kraken_report > may-results/11_kraken_out
+
+
+HUMAN KRAKEN
+./cgmemtime/cgmemtime -o may-results2/01_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq --report may-results2/01_kraken_report > may-results2/01_kraken_out
+./cgmemtime/cgmemtime -o may-results2/02_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/02_silico-30p-human-70p-bac.fastq --report may-results2/02_kraken_report > may-results2/02_kraken_out
+./cgmemtime/cgmemtime -o may-results2/03_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/03_silico-10-bacteria-100k-reads.fasta --report may-results2/03_kraken_report > may-results2/03_kraken_out
+./cgmemtime/cgmemtime -o may-results2/04_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/04_silico-3-euka-bac-100k-reads.fastq --report may-results2/04_kraken_report > may-results2/04_kraken_out
+./cgmemtime/cgmemtime -o may-results2/05_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/05_human-pathogen.fastq --report may-results2/05_kraken_report > may-results2/05_kraken_out
+./cgmemtime/cgmemtime -o may-results2/06_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/06_50-bac-100k.fastq --report may-results2/06_kraken_report > may-results2/06_kraken_out
+./cgmemtime/cgmemtime -o may-results2/08_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta --report may-results2/08_kraken_report > may-results2/08_kraken_out
+./cgmemtime/cgmemtime -o may-results2/09_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/09_zymo_pacbio.fastq --report may-results2/09_kraken_report > may-results2/09_kraken_out
+./cgmemtime/cgmemtime -o may-results2/10_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/10_zymo_ont.fastq --report may-results2/10_kraken_report > may-results2/10_kraken_out
+./cgmemtime/cgmemtime -o may-results2/11_kraken_time ./kraken2 --threads 12 --db ../../databases/kraken_human_2 ../../seqs/11_SRR11606871_subsampled.fastq --report may-results2/11_kraken_report > may-results2/11_kraken_out
+
+
+CUSTOM CLARK
+./cgmemtime/cgmemtime -o may-results/01_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -R may-results_new/01_clark_out
+./cgmemtime/cgmemtime -o may-results/02_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/02_silico-30p-human-70p-bac.fastq -R may-results/02_clark_out
+./cgmemtime/cgmemtime -o may-results/03_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/03_silico-10-bacteria-100k-reads.fasta -R may-results/03_clark_out
+./cgmemtime/cgmemtime -o may-results/04_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -R may-results/04_clark_out
+./cgmemtime/cgmemtime -o may-results/05_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/05_human-pathogen.fastq -R may-results_new/05_clark_out
+./cgmemtime/cgmemtime -o may-results/06_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/06_50-bac-100k.fastq -R may-results/06_clark_out
+./cgmemtime/cgmemtime -o may-results/08_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta -R may-results/08_clark_out
+./cgmemtime/cgmemtime -o may-results/09_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/09_zymo_pacbio.fastq -R may-results/09_clark_out
+./cgmemtime/cgmemtime -o may-results/10_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/10_zymo_ont.fastq -R may-results/10_clark_out
+./cgmemtime/cgmemtime -o may-results/11_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/11_SRR11606871_subsampled.fastq -R may-results/11_clark_out
+
+
+HUMAN CLARK
+./cgmemtime/cgmemtime -o may-results2/01_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -R may-results2/01_clark_out
+./cgmemtime/cgmemtime -o may-results2/02_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/02_silico-30p-human-70p-bac.fastq -R may-results2/02_clark_out
+./cgmemtime/cgmemtime -o may-results2/03_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/03_silico-10-bacteria-100k-reads.fasta -R may-results2/03_clark_out
+./cgmemtime/cgmemtime -o may-results2/04_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -R may-results2/04_clark_out
+./cgmemtime/cgmemtime -o may-results2/05_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/05_human-pathogen.fastq -R may-results2/05_clark_out
+./cgmemtime/cgmemtime -o may-results2/06_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/06_50-bac-100k.fastq -R may-results2/06_clark_out
+./cgmemtime/cgmemtime -o may-results2/08_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta -R may-results2/08_clark_out
+./cgmemtime/cgmemtime -o may-results2/09_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/09_zymo_pacbio.fastq -R may-results2/09_clark_out
+./cgmemtime/cgmemtime -o may-results2/10_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/10_zymo_ont.fastq -R may-results2/10_clark_out
+./cgmemtime/cgmemtime -o may-results2/11_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/11_SRR11606871_subsampled.fastq -R may-results2/11_clark_out
+
+
+S-CLARK HUMAN
+./cgmemtime/cgmemtime -o clark_s_human/01_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -R s_clark_human/01_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/02_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/02_silico-30p-human-70p-bac.fastq -R s_clark_human/02_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/03_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/03_silico-10-bacteria-100k-reads.fasta -R s_clark_human/03_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/04_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -R s_clark_human/04_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/05_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/05_human-pathogen.fastq -R s_clark_human/05_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/06_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/06_50-bac-100k.fastq -R s_clark_human/06_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/08_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta -R s_clark_human/08_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/09_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/09_zymo_pacbio.fastq -R s_clark_human/09_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/10_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/10_zymo_ont.fastq -R s_clark_human/10_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/11_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/11_SRR11606871_subsampled.fastq -R s_clark_human/11_clark_out --spaced
+
+
+S-CLARK CUSTOM
+./cgmemtime/cgmemtime -o s_clark_custom2/01_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -R s_clark_custom2/01_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/02_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/02_silico-30p-human-70p-bac.fastq -R s_clark_custom2/02_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/03_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/03_silico-10-bacteria-100k-reads.fasta -R s_clark_custom2/03_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/04_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -R s_clark_custom2/04_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/05_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/05_human-pathogen.fastq -R s_clark_custom2/05_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/06_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/06_50-bac-100k.fastq -R s_clark_custom2/06_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/08_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta -R s_clark_custom2/08_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/09_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/09_zymo_pacbio.fastq -R s_clark_custom2/09_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/10_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/10_zymo_ont.fastq -R s_clark_custom2/10_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_custom2/11_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/11_SRR11606871_subsampled.fastq -R s_clark_custom2/11_clark_out --spaced
+
+
+MINIMAP WITH ALIGNMENT
+../software/clark/cgmemtime/cgmemtime -o human_june/01_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > human_june/human2_1.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/02_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/02_silico-30p-human-70p-bac.fastq > human_june/human2_2.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/03_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/03_silico-10-bacteria-100k-reads.fasta > human_june/human2_3.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/04_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/04_silico-3-euka-bac-100k-reads.fastq > human_june/human2_4.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/05_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/05_human-pathogen.fastq > human_june/human2_5.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/06_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/06_50-bac-100k.fastq > human_june/human2_6.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/08_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/08_negative2_10bac_shuffled_human_20k.fasta > human_june/human2_8.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/09_minimap_time ./minimap2 -ax map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/09_zymo_pacbio.fastq > human_june/human2_9.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/10_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/10_zymo_ont.fastq > human_june/human2_10.sam
+../software/clark/cgmemtime/cgmemtime -o human_june/11_minimap_time ./minimap2 -ax map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/11_SRR11606871_subsampled.fastq > human_june/human2_11.sam
+
+../software/clark/cgmemtime/cgmemtime -o custom_june/01_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > custom_june/custom2_1.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/02_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/02_silico-30p-human-70p-bac.fastq > custom_june/custom2_2.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/03_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/03_silico-10-bacteria-100k-reads.fasta > custom_june/custom2_3.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/04_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/04_silico-3-euka-bac-100k-reads.fastq > custom_june/custom2_4.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/05_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/05_human-pathogen.fastq > custom_june/custom2_5.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/06_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/06_50-bac-100k.fastq > custom_june/custom2_6.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/08_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/08_negative2_10bac_shuffled_human_20k.fasta > custom_june/custom2_8.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/09_minimap_time ./minimap2 -ax map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/09_zymo_pacbio.fastq > custom_june/custom2_9.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/10_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/10_zymo_ont.fastq > custom_june/custom2_10.sam
+../software/clark/cgmemtime/cgmemtime -o custom_june/11_minimap_time ./minimap2 -ax map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/11_SRR11606871_subsampled.fastq > custom_june/custom2_11.sam
+
+
+python sam_to_f2.py ../minimap2/human_june/human2_1.sam ../minimap2/human_june/human2_1 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_2.sam ../minimap2/human_june/human2_2 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_3.sam ../minimap2/human_june/human2_3 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_4.sam ../minimap2/human_june/human2_4 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_5.sam ../minimap2/human_june/human2_5 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_6.sam ../minimap2/human_june/human2_6 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_8.sam ../minimap2/human_june/human2_8 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_9.sam ../minimap2/human_june/human2_9 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_10.sam ../minimap2/human_june/human2_10 nodes.dmp
+python sam_to_f2.py ../minimap2/human_june/human2_11.sam ../minimap2/human_june/human2_11 nodes.dmp
+
+python sam_to_f2.py ../minimap2/custom_june/custom2_1.sam ../minimap2/custom_june/custom2_1 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_2.sam ../minimap2/custom_june/custom2_2 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_3.sam ../minimap2/custom_june/custom2_3 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_4.sam ../minimap2/custom_june/custom2_4 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_5.sam ../minimap2/custom_june/custom2_5 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_6.sam ../minimap2/custom_june/custom2_6 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_8.sam ../minimap2/custom_june/custom2_8 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_9.sam ../minimap2/custom_june/custom2_9 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_10.sam ../minimap2/custom_june/custom2_10 nodes.dmp
+python sam_to_f2.py ../minimap2/custom_june/custom2_11.sam ../minimap2/custom_june/custom2_11 nodes.dmp
+
+
+MINIMAP WITHOUT ALIGNMENT
+
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/01_minimap_time ./minimap2 -x map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > human_june_paf/human2_1.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/02_minimap_time ./minimap2 -x map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/02_silico-30p-human-70p-bac.fastq > human_june_paf/human2_2.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/03_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/03_silico-10-bacteria-100k-reads.fasta > human_june_paf/human2_3.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/04_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/04_silico-3-euka-bac-100k-reads.fastq > human_june_paf/human2_4.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/05_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/05_human-pathogen.fastq > human_june_paf/human2_5.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/06_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/06_50-bac-100k.fastq > human_june_paf/human2_6.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/08_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/08_negative2_10bac_shuffled_human_20k.fasta > human_june_paf/human2_8.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/09_minimap_time ./minimap2 -x map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/09_zymo_pacbio.fastq > human_june_paf/human2_9.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/10_minimap_time ./minimap2 -x map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/10_zymo_ont.fastq > human_june_paf/human2_10.paf
+../software/clark/cgmemtime/cgmemtime -o human_june_paf/11_minimap_time ./minimap2 -x map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/11_SRR11606871_subsampled.fastq > human_june_paf/human2_11.paf
+
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/01_minimap_time ./minimap2 -x map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > custom_june_paf/custom2_1.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/02_minimap_time ./minimap2 -x map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/02_silico-30p-human-70p-bac.fastq > custom_june_paf/custom2_2.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/03_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/03_silico-10-bacteria-100k-reads.fasta > custom_june_paf/custom2_3.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/04_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/04_silico-3-euka-bac-100k-reads.fastq > custom_june_paf/custom2_4.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/05_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/05_human-pathogen.fastq > custom_june_paf/custom2_5.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/06_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/06_50-bac-100k.fastq > custom_june_paf/custom2_6.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/08_minimap_time ./minimap2 -x map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/08_negative2_10bac_shuffled_human_20k.fasta > custom_june_paf/custom2_8.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/09_minimap_time ./minimap2 -x map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/09_zymo_pacbio.fastq > custom_june_paf/custom2_9.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/10_minimap_time ./minimap2 -x map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/10_zymo_ont.fastq > custom_june_paf/custom2_10.paf
+../software/clark/cgmemtime/cgmemtime -o custom_june_paf/11_minimap_time ./minimap2 -x map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/11_SRR11606871_subsampled.fastq > custom_june_paf/custom2_11.paf
+
+python paf_to_file.py ../minimap2/human_june_paf/human2_1.paf tax_cleaned_results4/minimap3/human2_1.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_2.paf tax_cleaned_results4/minimap3/human2_2.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_3.paf tax_cleaned_results4/minimap3/human2_3.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_4.paf tax_cleaned_results4/minimap3/human2_4.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_5.paf tax_cleaned_results4/minimap3/human2_5.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_6.paf tax_cleaned_results4/minimap3/human2_6.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_8.paf tax_cleaned_results4/minimap3/human2_8.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_9.paf tax_cleaned_results4/minimap3/human2_9.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_10.paf tax_cleaned_results4/minimap3/human2_10.f2 nodes.dmp
+python paf_to_file.py ../minimap2/human_june_paf/human2_11.paf tax_cleaned_results4/minimap3/human2_11.f2 nodes.dmp
+
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_1.paf tax_cleaned_results4/minimap3/custom2_1.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_2.paf tax_cleaned_results4/minimap3/custom2_2.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_3.paf tax_cleaned_results4/minimap3/custom2_3.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_4.paf tax_cleaned_results4/minimap3/custom2_4.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_5.paf tax_cleaned_results4/minimap3/custom2_5.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_6.paf tax_cleaned_results4/minimap3/custom2_6.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_8.paf tax_cleaned_results4/minimap3/custom2_8.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_9.paf tax_cleaned_results4/minimap3/custom2_9.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_10.paf tax_cleaned_results4/minimap3/custom2_10.f2 nodes.dmp
+python paf_to_file.py ../minimap2/custom_june_paf/custom2_11.paf tax_cleaned_results4/minimap3/custom2_11.f2 nodes.dmp
+
+
+RAM 
+../../software/clark/cgmemtime/cgmemtime -o human/01_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > human/01_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/02_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/02_silico-30p-human-70p-bac.fastq > human/02_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/03_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/03_silico-10-bacteria-100k-reads.fasta > human/03_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/04_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/04_silico-3-euka-bac-100k-reads.fastq > human/04_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/05_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/05_human-pathogen.fastq > human/05_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/06_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/06_50-bac-100k.fastq > human/06_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/08_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta > human/08_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/09_ram2_time ./bin/ram --minhash -k 29 -w 9 --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/09_zymo_pacbio.fastq > human/09_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/10_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/10_zymo_ont.fastq > human/10_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o human/11_ram2_time ./bin/ram --minhash -k 29 -w 9 --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/11_SRR11606871_subsampled.fastq > human/11_ram2_out.paf
+
+python paf_to_file.py ../ram/build/human/01_ram2_out.paf tax_cleaned_results4/ram/human2_1.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/02_ram2_out.paf tax_cleaned_results4/ram/human2_2.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/03_ram2_out.paf tax_cleaned_results4/ram/human2_3.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/04_ram2_out.paf tax_cleaned_results4/ram/human2_4.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/05_ram2_out.paf tax_cleaned_results4/ram/human2_5.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/06_ram2_out.paf tax_cleaned_results4/ram/human2_6.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/08_ram2_out.paf tax_cleaned_results4/ram/human2_8.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/09_ram2_out.paf tax_cleaned_results4/ram/human2_9.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/10_ram2_out.paf tax_cleaned_results4/ram/human2_10.f2 nodes.dmp
+python paf_to_file.py ../ram/build/human/11_ram2_out.paf tax_cleaned_results4/ram/human2_11.f2 nodes.dmp
+
+../../software/clark/cgmemtime/cgmemtime -o custom/01_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > custom/01_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/02_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/02_silico-30p-human-70p-bac.fastq > custom/02_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/03_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/03_silico-10-bacteria-100k-reads.fasta > custom/03_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/04_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/04_silico-3-euka-bac-100k-reads.fastq > custom/04_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/05_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/05_human-pathogen.fastq > custom/05_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/06_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/06_50-bac-100k.fastq > custom/06_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/08_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta > custom/08_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/09_ram2_time ./bin/ram --minhash -k 29 -w 9 --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/09_zymo_pacbio.fastq > custom/09_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/10_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/10_zymo_ont.fastq > custom/10_ram2_out.paf
+../../software/clark/cgmemtime/cgmemtime -o custom/11_ram2_time ./bin/ram --minhash -k 29 -w 9 --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/11_SRR11606871_subsampled.fastq > custom/11_ram2_out.paf
+
+python paf_to_file.py ../ram/build/custom/01_ram2_out.paf tax_cleaned_results4/ram/custom2_1.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/02_ram2_out.paf tax_cleaned_results4/ram/custom2_2.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/03_ram2_out.paf tax_cleaned_results4/ram/custom2_3.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/04_ram2_out.paf tax_cleaned_results4/ram/custom2_4.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/05_ram2_out.paf tax_cleaned_results4/ram/custom2_5.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/06_ram2_out.paf tax_cleaned_results4/ram/custom2_6.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/08_ram2_out.paf tax_cleaned_results4/ram/custom2_8.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/09_ram2_out.paf tax_cleaned_results4/ram/custom2_9.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/10_ram2_out.paf tax_cleaned_results4/ram/custom2_10.f2 nodes.dmp
+python paf_to_file.py ../ram/build/custom/11_ram2_out.paf tax_cleaned_results4/ram/custom2_11.f2 nodes.dmp
+

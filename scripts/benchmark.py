@@ -7,13 +7,13 @@ import sys
 
 if __name__ == '__main__':
 	tools = ["kraken", "centrifuge", "clark", "metamaps", "megan", "clark-s"]
-	databases = ["human2"]
-	root_parsed = "parsed_results4/"
-	root_cleaned = "tax_cleaned_results4/"
-	root_reports = "reports4/"
+	databases = ["human2", "custom2"]
+	root_parsed = "parsed_results/"
+	root_cleaned = "cleaned_results/"
+	root_reports = "reports/"
 
-	start = 3
-	number = 4
+	start = 1
+	number = 12
 
 	mode = sys.argv[1]
 
@@ -36,7 +36,9 @@ if __name__ == '__main__':
 		for tool in tools:
 			for database in databases:
 				for num in range(start, number):
-					results_filename = "results4/" + str(tool) + "/" + str(database) + "_" + str(num)
+					if num == 7:
+						continue
+					results_filename = "results/" + str(tool) + "/" + str(database) + "_" + str(num)
 
 					parsed_dir = root_parsed + str(tool)
 					if os.path.isdir(parsed_dir) == False:
@@ -57,6 +59,8 @@ if __name__ == '__main__':
 	if mode != "clean_and_parse" and mode != "only_cleaning" and mode != "only_parsing" and mode != "vibrio":
 		for database in databases:
 			for num in range(start, number):
+				if num == 7:
+					continue
 				dataset = str(num)
 				print("Analysing: " + str(database) + " - " + dataset)
 				analize_results.main_func(root_cleaned, root_reports, dataset, database, names_lines)

@@ -3,7 +3,7 @@ import re
 import os
 
 def main_func(root_cleaned, root_reports, dataset, database, names_lines, missing_lines):
-    tools = ["truth", "kraken", "centrifuge", "clark", "metamaps", "megan", "minimap2", "minimap3", "ram", "ramM", "clark-s"]
+    tools = ["truth", "kraken", "centrifuge", "clark", "metamaps", "megan", "minimapA", "minimapM", "ram", "clark-s"]
 
     missing = {}
 
@@ -19,7 +19,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines, missin
 
     results = {}
 
-    filename = "truth2/" + database + "_" + dataset
+    filename = "truth/" + database + "_" + dataset
     file_read = open(filename, "r") 
     truth_res = {}
     lines = file_read.readlines()
@@ -35,7 +35,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines, missin
         filename = root_cleaned + tool + "/" + database + "_" + dataset + ".f2"
         if tool == "truth":
             continue;
-            filename = "truth2/" + database + "_" + dataset
+            filename = "truth/" + database + "_" + dataset
         file = open(filename, "r") 
         lines = file.readlines()
         
@@ -52,15 +52,8 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines, missin
             if rank == "species":
                 if read_id in truth_res:
                     tool_mappings[read_id] = tax_id
-                    # if tax_id not in tool_mappings:
-                    #     tool_mappings[tax_id] = 1
-                    # tool_mappings[tax_id] += 1
                 else:
                     not_in_truth += 1
-
-        # if str(dataset) == "8":
-            
-        # else:
         for read_id in truth_res:
             tax_id = truth_res[read_id]
             if tax_id in missing:
