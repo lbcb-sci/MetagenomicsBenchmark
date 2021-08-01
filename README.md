@@ -1,5 +1,5 @@
 
-***Metagenomics benchmark.***
+%Metagenomics benchmark.
 
 **Legend**
 
