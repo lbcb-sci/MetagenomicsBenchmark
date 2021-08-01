@@ -1,22 +1,25 @@
 
-**Metagenomics benchmark.**
+***Metagenomics benchmark.***
+
+**Legend**
 
 The commands executed to obtain results from the tools are listed in the file data/all_commands.txt
 
-data/database_sequences.txt contain list of sequence ids of all the sequence genomes in the database.
+data/database_sequences.txt contains list of sequence ids of all the sequence genomes in the database.
 
 The results are shown for each dataset where every dataset has its order number.
 The numbers for each dataset:
-1 - 01_Mock_100000-bacteria-l1000-q10.fastq
-2 - 02_silico-30p-human-70p-bac.fastq
-3 - 03_silico-10-bacteria-100k-reads.fasta
-4 - 04_silico-3-euka-bac-100k-reads.fastq
-5 - 05_human-pathogen.fastq
-6 - 06_50-bac-100k.fastq
-8 - 08_negative2_10bac_shuffled_human_20k.fasta
-9 - 09_zymo_pacbio.fastq
-10 - 10_zymo_ont.fastq
-11 - 11_SRR11606871_subsampled.fastq
+
+- 1 - 01_Mock_100000-bacteria-l1000-q10.fastq
+- 2 - 02_silico-30p-human-70p-bac.fastq
+- 3 - 03_silico-10-bacteria-100k-reads.fasta
+- 4 - 04_silico-3-euka-bac-100k-reads.fastq
+- 5 - 05_human-pathogen.fastq
+- 6 - 06_50-bac-100k.fastq
+- 8 - 08_negative2_10bac_shuffled_human_20k.fasta
+- 9 - 09_zymo_pacbio.fastq
+- 10 - 10_zymo_ont.fastq
+- 11 - 11_SRR11606871_subsampled.fastq
 
 Database have these names:
  - custom - database built from refseq Bacteria and Archaea genomes
@@ -37,7 +40,7 @@ extension:
  - .report_truth - report file, same as .report, but with only true positive results
  - .ab - abundance report file, every row contains relative abundance 
 
-**Contents:**
+**Supporting files:**
 
 Download the supporting files from the following link: 
 https://zenodo.org/deposit/5151469
