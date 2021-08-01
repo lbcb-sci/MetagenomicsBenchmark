@@ -2,7 +2,7 @@ import sys
 import re
 import os
 
-def main_func(root_cleaned, root_reports, dataset, database, names_lines, missing_lines):
+def main_func(root_cleaned, root_reports, dataset, database, names_lines, missing_lines, truth_path, target_rank):
     tools = ["truth", "kraken", "centrifuge", "clark", "metamaps", "megan", "minimapA", "minimapM", "ram", "clark-s"]
 
     missing = {}
@@ -19,7 +19,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines, missin
 
     results = {}
 
-    filename = "truth/" + database + "_" + dataset
+    filename = truth_path + "/" + database + "_" + dataset
     file_read = open(filename, "r") 
     truth_res = {}
     lines = file_read.readlines()
@@ -35,7 +35,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines, missin
         filename = root_cleaned + tool + "/" + database + "_" + dataset + ".f2"
         if tool == "truth":
             continue;
-            filename = "truth/" + database + "_" + dataset
+            filename = truth_path + "/" + database + "_" + dataset
         file = open(filename, "r") 
         lines = file.readlines()
         
@@ -49,7 +49,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines, missin
             tax_id = parts[1].strip()
             percentage = float(parts[2].strip())
             rank = parts[3].strip()
-            if rank == "species":
+            if rank == target_rank:
                 if read_id in truth_res:
                     tool_mappings[read_id] = tax_id
                 else:
@@ -77,19 +77,29 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines, missin
     file_write.close()
 
 if __name__ == '__main__':
+
+    missing_file_path = "data/missing_species.txt"
+    # missing_file_path = "data/missing_genus.txt"
+    database = "human2"
+    root_cleaned = "cleaned_results/"
+    # root_cleaned = "cleaned_results_genus/"
+    root_reports = "true_negatives/"
+    # root_reports = "true_negatives_genus/"
+    truth_path = "truth/"
+    # truth_path = "truth_genus/"
+    target_rank = "species"
+    # target_rank = "genus"
+
     names_file = open("names.dmp", "r")
     names_lines = names_file.readlines()
 
-    missing_file = open("missing", "r")
+    missing_file = open(missing_file_path, "r")
     missing_lines = missing_file.readlines()
 
-    database = "human2"
-    root_cleaned = "tax_cleaned_results4/"
-    root_reports = "true_negatives/"
-    for num in range(1, 7):
+    for num in range(8, 9):
         dataset = str(num)
         print("Analysing: " + str("human2") + " - " + dataset)
-        main_func(root_cleaned, root_reports, dataset, database, names_lines, missing_lines)
+        main_func(root_cleaned, root_reports, dataset, database, names_lines, missing_lines, truth_path, target_rank)
 
 
 

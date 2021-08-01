@@ -20,7 +20,7 @@ if __name__ == '__main__':
 		"8": "08_negative2_10bac_shuffled_human_20k.fasta",
 		"9": "09_zymo_pacbio.fastq",
 		"10": "10_zymo_ont.fastq",
-		"11": "14_SRR11606871_subsampled.fastq",
+		"11": "11_SRR11606871_subsampled.fastq"
 	}
 
 	extensions = {
@@ -33,7 +33,7 @@ if __name__ == '__main__':
 		"8": "fasta",
 		"9": "fastq",
 		"10": "fastq",
-		"11": "fastq",
+		"11": "fastq"
 	}
 
 	list_of_read_sizes = {}

@@ -5,15 +5,23 @@ import analize_true_positives
 import os
 import sys
 
+# uncomment for genus analysis
+
 if __name__ == '__main__':
 	tools = ["kraken", "centrifuge", "clark", "metamaps", "megan", "clark-s"]
 	databases = ["human2", "custom2"]
 	root_parsed = "parsed_results/"
 	root_cleaned = "cleaned_results/"
+	# root_cleaned = "genus_cleaned_results/"
 	root_reports = "reports/"
+	# root_reports = "reports_genus/"
+	truth_path = "truth/"
+	# truth_path = "truth_genus/"
+	target_rank = "species"
+	# target_rank = "genus"
 
 	start = 1
-	number = 12
+	number = 9
 
 	mode = sys.argv[1]
 
@@ -54,15 +62,15 @@ if __name__ == '__main__':
 							os.mkdir(cleaned_dir)
 						cleaned_filename = cleaned_dir + "/" + str(database) + "_" + str(num) + ".f2"
 						print("Cleaning: " + str(tool) + " - " + str(database)+ " - " + str(num))
-						analize_tool_output.main_func(tool, parsed_filename, nodes_lines, cleaned_filename)
+						analize_tool_output.main_func(tool, parsed_filename, nodes_lines, cleaned_filename, target_rank)
 
-	if mode != "clean_and_parse" and mode != "only_cleaning" and mode != "only_parsing" and mode != "vibrio":
+	if mode != "clean_and_parse" and mode != "only_cleaning" and mode != "only_parsing":
 		for database in databases:
 			for num in range(start, number):
 				if num == 7:
 					continue
 				dataset = str(num)
 				print("Analysing: " + str(database) + " - " + dataset)
-				analize_results.main_func(root_cleaned, root_reports, dataset, database, names_lines)
+				analize_results.main_func(root_cleaned, root_reports, dataset, database, names_lines, truth_path, target_rank)
 				if num < 9:
-					analize_true_positives.main_func(root_cleaned, root_reports, dataset, database, names_lines)
+					analize_true_positives.main_func(root_cleaned, root_reports, dataset, database, names_lines, truth_path, target_rank)

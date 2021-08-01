@@ -2,7 +2,7 @@ import sys
 import re
 import os
 
-def main_func(root_cleaned, root_reports, dataset, database, names_lines):
+def main_func(root_cleaned, root_reports, dataset, database, names_lines, truth_path, target_rank):
     tools = ["truth", "kraken", "centrifuge", "clark", "metamaps", "megan", "minimapA", "minimapM", "ram", "clark-s"]
 
     taxonomy = {}
@@ -13,7 +13,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
 
     results = {}
 
-    filename = "truth/" + database + "_" + dataset
+    filename = truth_path + "/" + database + "_" + dataset
     file_read = open(filename, "r") 
     truth_res = {}
     lines = file_read.readlines()
@@ -28,7 +28,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
     for tool in tools:
         filename = root_cleaned + tool + "/" + database + "_" + dataset + ".f2"
         if tool == "truth":
-            filename = "truth/" + database + "_" + dataset
+            filename = truth_path + "/" + database + "_" + dataset
         file = open(filename, "r") 
         lines = file.readlines()
         
@@ -39,7 +39,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
             tax_id = parts[1].strip()
             percentage = float(parts[2].strip())
             rank = parts[3].strip()
-            if rank == "species":
+            if rank == target_rank:
                 if read_id in truth_res:
                     if truth_res[read_id] == tax_id:
                         if tax_id in tool_results:
@@ -80,12 +80,12 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines):
     file_write.close()
 
 if __name__ == '__main__':
-    if len(sys.argv) < 6:
-        print("Script requires 5 arguments")
+    if len(sys.argv) < 8:
+        print("Script requires 7 arguments")
         exit()
     names_file = open(sys.argv[5], "r")
     names_lines = names_file.readlines()
-    main_func(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], names_lines)
+    main_func(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], names_lines, sys.argv[6], sys.argv[7])
 
 
 

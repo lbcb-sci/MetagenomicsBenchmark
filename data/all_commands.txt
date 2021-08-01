@@ -129,7 +129,7 @@ HUMAN CLARK
 
 
 S-CLARK HUMAN
-./cgmemtime/cgmemtime -o clark_s_human/01_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -R s_clark_human/01_clark_out --spaced
+./cgmemtime/cgmemtime -o s_clark_human/01_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -R s_clark_human/01_clark_out --spaced
 ./cgmemtime/cgmemtime -o s_clark_human/02_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/02_silico-30p-human-70p-bac.fastq -R s_clark_human/02_clark_out --spaced
 ./cgmemtime/cgmemtime -o s_clark_human/03_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/03_silico-10-bacteria-100k-reads.fasta -R s_clark_human/03_clark_out --spaced
 ./cgmemtime/cgmemtime -o s_clark_human/04_clark_time ./classify_metagenome.sh -n 12 -O ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -R s_clark_human/04_clark_out --spaced

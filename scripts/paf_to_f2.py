@@ -24,7 +24,7 @@ def find_resulting_tax_id(parent):
 	while not_found_resulting_tax_id:
 		if parent in parents:
 			parent_rank = ranks[parent]
-			if parent_rank == "species":
+			if parent_rank == sys.argv[4]:
 				not_found_resulting_tax_id = False
 				resulting_tax_id = parent
 			else:
@@ -66,9 +66,6 @@ for line in lines:
 			max_values[read_id] = value_cig
 		elif value_cig == max_values[read_id]:
 			results[read_id].append(parent)
-		# if parent != results[read_id]:
-		# 	results[read_id] = "duplicates"
-		# 	duplicates += 1
 	else:
 		results[read_id] = []
 		results[read_id].append(parent)

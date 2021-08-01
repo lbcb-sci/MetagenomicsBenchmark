@@ -24,7 +24,7 @@ def find_resulting_tax_id(parent):
 	while not_found_resulting_tax_id:
 		if parent in parents:
 			parent_rank = ranks[parent]
-			if parent_rank == "species":
+			if parent_rank == sys.argv[4]:
 				not_found_resulting_tax_id = False
 				resulting_tax_id = parent
 			else:

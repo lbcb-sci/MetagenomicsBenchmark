@@ -2,7 +2,7 @@ import sys
 import re
 import os
 
-def main_func(tool, results_path, nodes_lines, fileout):
+def main_func(tool, results_path, nodes_lines, fileout, target_rank):
     results_file = open(results_path, "r") 
     results_lines = results_file.readlines()
 
@@ -22,7 +22,7 @@ def main_func(tool, results_path, nodes_lines, fileout):
         while not_found_resulting_tax_id:
             if parent in parents:
                 parent_rank = ranks[parent]
-                if parent_rank == "species":
+                if parent_rank == target_rank:
                     not_found_resulting_tax_id = False
                     resulting_tax_id = parent
                 else:
@@ -51,7 +51,7 @@ def main_func(tool, results_path, nodes_lines, fileout):
         if tax_id in parents:
             parent = parents[tax_id]
             rank = ranks[tax_id]
-            if rank == "species":
+            if rank == target_rank:
                 outfile.write(read_id.strip() + "\t" + tax_id.strip() + "\t" + percentage.strip() + "\t" + rank.strip() + "\n")
             else:
                 resulting_tax_id = find_resulting_tax_id(parent)
@@ -65,9 +65,9 @@ def main_func(tool, results_path, nodes_lines, fileout):
 
 if __name__ == '__main__':
     if len(sys.argv) < 5:
-        print("Script requires 4 arguments")
+        print("Script requires 5 arguments")
         exit()
     nodes_file = open(sys.argv[3], "r")
     nodes_lines = nodes_file.readlines()
-    main_func(sys.argv[1], sys.argv[2], nodes_lines, sys.argv[4])
+    main_func(sys.argv[1], sys.argv[2], nodes_lines, sys.argv[4], sys.argv[5])
 
