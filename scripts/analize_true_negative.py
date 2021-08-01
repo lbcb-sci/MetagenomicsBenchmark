@@ -61,7 +61,7 @@ def main_func(root_cleaned, root_reports, dataset, database, names_lines, missin
                 if read_id not in tool_mappings:
                     false_positive += 1
 
-        results[tool] = (false_positive, not_in_truth, total)
+        results[tool] = (false_positive, not_in_truth)
 
     analysis = {}
 
