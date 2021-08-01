@@ -1,7 +1,7 @@
 
-%Metagenomics benchmark.
+# Metagenomics benchmark
 
-**Legend**
+### Legend
 
 The commands executed to obtain results from the tools are listed in the file data/all_commands.txt
 
@@ -40,7 +40,7 @@ extension:
  - .report_truth - report file, same as .report, but with only true positive results
  - .ab - abundance report file, every row contains relative abundance 
 
-**Supporting files:**
+### Supporting files:
 
 Download the supporting files from the following link: 
 https://zenodo.org/deposit/5151469
@@ -68,15 +68,15 @@ Along with the supporting files, scripts use already uploaded files in the data 
 
 In order to execute the analysis, extract the supporting file archive into the root directory of this project.
 
-**Scripts:**
+### Scripts:
  
- - parse_tool_output.py - parses classification output files from tools and produces read_id to tax_id mappings in .stat file
+ - **parse_tool_output.py** - parses classification output files from tools and produces read_id to tax_id mappings in .stat file
  	- arguments: <tool> <results_path> <fileout>
  		- <tool> name of the tool, kraken, clark, clark-s, centrifuge, metamaps or megan
  		- <results_path> path to the classification results file
  		- <fileout> path to the resulting .stat file
 
-- analize_tool_output.py - takes .stat file and produces .f2 file
+- **analize_tool_output.py** - takes .stat file and produces .f2 file
 	- arguments: <tool> <results_path> <nodes_file> <fileout> <target_rank>
 		- <tool> name of the tool
 		- <results_path> .stat file
@@ -84,7 +84,7 @@ In order to execute the analysis, extract the supporting file archive into the r
 		- <fileout> path to the resulting .f2 file
 		- <target_rank> species or genus
 
-- analize_results.py - analizes .f2 results from all the tools for one dataset and one database and generates .report file
+- **analize_results.py** - analizes .f2 results from all the tools for one dataset and one database and generates .report file
 	- arguments: <root_cleaned> <root_reports> <dataset> <database> <names_file> <truth_path> <target_rank>
 		- <root_cleaned> - path to the root folder that contains .f2 files
 		- <root_reports> - path to the root folder where the reports are stored
@@ -94,9 +94,9 @@ In order to execute the analysis, extract the supporting file archive into the r
 		- <truth_path> - path to the truth directory
 		- <target_rank> - species or genus
 
-- analize_true_positives.py - similar to analize_results.py but it only calculates true positive report. The input argumates are the same as for the analize_results.py.
+- **analize_true_positives.py** - similar to analize_results.py but it only calculates true positive report. The input argumates are the same as for the analize_results.py.
 
-- benchmark.py - script that executes whole analysis pipeline, for every tool it executes parse_tool_output, then analize_tool_output and then for every dataset and database it generates reports with analize_results
+- **benchmark.py** - script that executes whole analysis pipeline, for every tool it executes parse_tool_output, then analize_tool_output and then for every dataset and database it generates reports with analize_results
 	- arguments: <mode> there are 4 modes in which this script can be run:
 		- only_parsing - only parse_tool_output is executed for every tool, database and dataset, .stat files are generated
 		- only_cleaning - only analize_tool_output is executed for evey tool, database and dataset, .f2 files are generated, but the precondition is that .stat files have been generated in advance
@@ -105,7 +105,7 @@ In order to execute the analysis, extract the supporting file archive into the r
 		- all - all the steps are executed and resulting .report files are generated for evey tool, dataset and database
 	- in order to execute analysis for genus level uncoment the commented lines in the script
 
-- analize_abundances.py - script that prints the .report file containing analysis of abundances for one dataset and one database. It generates .report file but with abundance estimations for species. The abundance of the species is calculated as the total sum of the reads classified to that species, divided by the average length of the genome of that species.
+- **analize_abundances.py** - script that prints the .report file containing analysis of abundances for one dataset and one database. It generates .report file but with abundance estimations for species. The abundance of the species is calculated as the total sum of the reads classified to that species, divided by the average length of the genome of that species.
 	- arguments: <dataset> <database> <genome_sizes_filename> <path_to_dataset> <root_cleanded> <root_abundances> <names_file> <dataset_format>
 		- <dataset> - name of the dataset
 		- <database> - name of the database
@@ -116,15 +116,15 @@ In order to execute the analysis, extract the supporting file archive into the r
 		- <names_file> - path to the names.dmp file
 		- <dataset_format> - format of the dataset, fastq or fasta
 
-- abundances.py - script that calculates all the abundance reports for all the datasets and databases.
+- **abundances.py** - script that calculates all the abundance reports for all the datasets and databases.
 	- arguments: <genome_sizes_filename> <path_to_datasets>
 		- <genome_sizes_filename> - path to the file that contains the lengths of genomes
 		- <path_to_datasets> - path to where the all the datasets are stored
 	- in order to execute analysis for only portion of longest reads uncomen the commented lines in the script
 
-- analize_true_negative.py - script that calculates true negatives for datasets 1-6 and false negatives for dataset 8. The results are outputed in the format where in each row there are three values separated by tab. First value is the number of true negative reads that are in the ground truth (so without shuffle reads), second value is the number of false negative reads that are not in the ground truth (zero for all datasets excpet dataset 8). 
+- **analize_true_negative.py** - script that calculates true negatives for datasets 1-6 and false negatives for dataset 8. The results are outputed in the format where in each row there are three values separated by tab. First value is the number of true negative reads that are in the ground truth (so without shuffle reads), second value is the number of false negative reads that are not in the ground truth (zero for all datasets excpet dataset 8). 
 
-- paf_to_f2.py (sam_to_f2.py) - script that parses .paf (.sam) files and extracts read classifications in the .f2 format. 
+- **paf_to_f2.py (sam_to_f2.py)** - script that parses .paf (.sam) files and extracts read classifications in the .f2 format. 
 	- arguments: <path_to_paf(sam)_file> <output_file> <nodes_file> <target_rank>
 		- <path_to_paf(sam)_file> - results file in paf (sam) format
 		- <output_file> - output file in f2 format 
