@@ -1,5 +1,4 @@
 import analize_abundances
-import analize_abunances
 import os
 import sys
 from Bio import SeqIO
