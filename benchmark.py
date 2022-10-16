@@ -603,9 +603,9 @@ def main_func(number_of_nodes_files, datasets_path, should_read):
 
     databases = ["human2", "custom2"]
     datasets = [
-        # ("01_Mock_100000-bacteria-l1000-q10.fastq", False, 1, False, False),
-        # ("02_silico-30p-human-70p-bac.fastq", False, 2, False, False),
-        # ("03_silico-10-bacteria-100k-reads.fasta", False, 3, True, False),
+        ("01_Mock_100000-bacteria-l1000-q10.fastq", False, 1, False, False),
+        ("02_silico-30p-human-70p-bac.fastq", False, 2, False, False),
+        ("03_silico-10-bacteria-100k-reads.fasta", False, 3, True, False),
         ("04_silico-3-euka-bac-100k-reads.fastq", False, 4, True, False),
         ("05_human-pathogen.fastq", False, 5, True, False),
         ("06_50-bac-100k.fastq", False, 6, True, False),
