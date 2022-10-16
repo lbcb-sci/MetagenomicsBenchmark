@@ -48,7 +48,8 @@ https://zenodo.org/deposit/7198915
 The supporting files contain:
 
 1. results - results of tools without minimap2 and ram results because they were too big to upload. We can provide them on request. Truth results included.
-2. cleaned_results - results of the classification after the parsing of tool results, stored in .f2 format Cleaned results are calculated for human and custom database and for species and genus level.
+2. cleaned_results - results of the classification after the parsing of tool results, stored in .f2 format Cleaned results are calculated for human and custom database and for species and genus level. The format of file names is `<tool>_<database>_<dataset_number>_<rank>.f2`.
+
 3. nodes.dmp and names.dmp taxonomy files
 4. reports - Containig report results. Files are named in format: `<database>_<dataset_number>_<dataset_name>_<rank>_<report_type>.csv`
 	- <format type> - can be: 
