@@ -1,6 +1,3 @@
-important link for metamaps instalation:
-https://github.com/DiltheyLab/MetaMaps/issues/20
-
 
 METAMAPS CUSTOM
 ./cgmemtime/cgmemtime -o may-results/01_metamaps_time ./metamaps mapDirectly --all -t 12 -r baza_g3/custom_4/DB.fa -q ../../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq --maxmemory 150 -o may-results/01_metamaps_out
@@ -155,6 +152,7 @@ S-CLARK CUSTOM
 
 
 MINIMAP WITH ALIGNMENT
+
 ../software/clark/cgmemtime/cgmemtime -o human_june/01_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > human_june/human2_1.sam
 ../software/clark/cgmemtime/cgmemtime -o human_june/02_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/02_silico-30p-human-70p-bac.fastq > human_june/human2_2.sam
 ../software/clark/cgmemtime/cgmemtime -o human_june/03_minimap_time ./minimap2 -ax map-pb -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/03_silico-10-bacteria-100k-reads.fasta > human_june/human2_3.sam
@@ -176,30 +174,6 @@ MINIMAP WITH ALIGNMENT
 ../software/clark/cgmemtime/cgmemtime -o custom_june/09_minimap_time ./minimap2 -ax map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/09_zymo_pacbio.fastq > custom_june/custom2_9.sam
 ../software/clark/cgmemtime/cgmemtime -o custom_june/10_minimap_time ./minimap2 -ax map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/10_zymo_ont.fastq > custom_june/custom2_10.sam
 ../software/clark/cgmemtime/cgmemtime -o custom_june/11_minimap_time ./minimap2 -ax map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/11_SRR11606871_subsampled.fastq > custom_june/custom2_11.sam
-
-
-python sam_to_f2.py ../minimap2/human_june/human2_1.sam ../minimap2/human_june/human2_1 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_2.sam ../minimap2/human_june/human2_2 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_3.sam ../minimap2/human_june/human2_3 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_4.sam ../minimap2/human_june/human2_4 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_5.sam ../minimap2/human_june/human2_5 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_6.sam ../minimap2/human_june/human2_6 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_8.sam ../minimap2/human_june/human2_8 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_9.sam ../minimap2/human_june/human2_9 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_10.sam ../minimap2/human_june/human2_10 nodes.dmp
-python sam_to_f2.py ../minimap2/human_june/human2_11.sam ../minimap2/human_june/human2_11 nodes.dmp
-
-python sam_to_f2.py ../minimap2/custom_june/custom2_1.sam ../minimap2/custom_june/custom2_1 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_2.sam ../minimap2/custom_june/custom2_2 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_3.sam ../minimap2/custom_june/custom2_3 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_4.sam ../minimap2/custom_june/custom2_4 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_5.sam ../minimap2/custom_june/custom2_5 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_6.sam ../minimap2/custom_june/custom2_6 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_8.sam ../minimap2/custom_june/custom2_8 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_9.sam ../minimap2/custom_june/custom2_9 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_10.sam ../minimap2/custom_june/custom2_10 nodes.dmp
-python sam_to_f2.py ../minimap2/custom_june/custom2_11.sam ../minimap2/custom_june/custom2_11 nodes.dmp
-
 
 MINIMAP WITHOUT ALIGNMENT
 
@@ -225,30 +199,8 @@ MINIMAP WITHOUT ALIGNMENT
 ../software/clark/cgmemtime/cgmemtime -o custom_june_paf/10_minimap_time ./minimap2 -x map-ont -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/10_zymo_ont.fastq > custom_june_paf/custom2_10.paf
 ../software/clark/cgmemtime/cgmemtime -o custom_june_paf/11_minimap_time ./minimap2 -x map-hifi -t 12 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/11_SRR11606871_subsampled.fastq > custom_june_paf/custom2_11.paf
 
-python paf_to_file.py ../minimap2/human_june_paf/human2_1.paf tax_cleaned_results4/minimap3/human2_1.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_2.paf tax_cleaned_results4/minimap3/human2_2.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_3.paf tax_cleaned_results4/minimap3/human2_3.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_4.paf tax_cleaned_results4/minimap3/human2_4.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_5.paf tax_cleaned_results4/minimap3/human2_5.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_6.paf tax_cleaned_results4/minimap3/human2_6.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_8.paf tax_cleaned_results4/minimap3/human2_8.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_9.paf tax_cleaned_results4/minimap3/human2_9.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_10.paf tax_cleaned_results4/minimap3/human2_10.f2 nodes.dmp
-python paf_to_file.py ../minimap2/human_june_paf/human2_11.paf tax_cleaned_results4/minimap3/human2_11.f2 nodes.dmp
-
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_1.paf tax_cleaned_results4/minimap3/custom2_1.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_2.paf tax_cleaned_results4/minimap3/custom2_2.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_3.paf tax_cleaned_results4/minimap3/custom2_3.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_4.paf tax_cleaned_results4/minimap3/custom2_4.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_5.paf tax_cleaned_results4/minimap3/custom2_5.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_6.paf tax_cleaned_results4/minimap3/custom2_6.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_8.paf tax_cleaned_results4/minimap3/custom2_8.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_9.paf tax_cleaned_results4/minimap3/custom2_9.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_10.paf tax_cleaned_results4/minimap3/custom2_10.f2 nodes.dmp
-python paf_to_file.py ../minimap2/custom_june_paf/custom2_11.paf tax_cleaned_results4/minimap3/custom2_11.f2 nodes.dmp
-
-
 RAM 
+
 ../../software/clark/cgmemtime/cgmemtime -o human/01_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > human/01_ram2_out.paf
 ../../software/clark/cgmemtime/cgmemtime -o human/02_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/02_silico-30p-human-70p-bac.fastq > human/02_ram2_out.paf
 ../../software/clark/cgmemtime/cgmemtime -o human/03_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/03_silico-10-bacteria-100k-reads.fasta > human/03_ram2_out.paf
@@ -260,16 +212,6 @@ RAM
 ../../software/clark/cgmemtime/cgmemtime -o human/10_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/10_zymo_ont.fastq > human/10_ram2_out.paf
 ../../software/clark/cgmemtime/cgmemtime -o human/11_ram2_time ./bin/ram --minhash -k 29 -w 9 --threads 12 ../../truth_database/bacteria_arachea_human_lib.fna ../../seqs/11_SRR11606871_subsampled.fastq > human/11_ram2_out.paf
 
-python paf_to_file.py ../ram/build/human/01_ram2_out.paf tax_cleaned_results4/ram/human2_1.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/02_ram2_out.paf tax_cleaned_results4/ram/human2_2.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/03_ram2_out.paf tax_cleaned_results4/ram/human2_3.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/04_ram2_out.paf tax_cleaned_results4/ram/human2_4.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/05_ram2_out.paf tax_cleaned_results4/ram/human2_5.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/06_ram2_out.paf tax_cleaned_results4/ram/human2_6.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/08_ram2_out.paf tax_cleaned_results4/ram/human2_8.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/09_ram2_out.paf tax_cleaned_results4/ram/human2_9.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/10_ram2_out.paf tax_cleaned_results4/ram/human2_10.f2 nodes.dmp
-python paf_to_file.py ../ram/build/human/11_ram2_out.paf tax_cleaned_results4/ram/human2_11.f2 nodes.dmp
 
 ../../software/clark/cgmemtime/cgmemtime -o custom/01_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq > custom/01_ram2_out.paf
 ../../software/clark/cgmemtime/cgmemtime -o custom/02_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/02_silico-30p-human-70p-bac.fastq > custom/02_ram2_out.paf
@@ -282,14 +224,325 @@ python paf_to_file.py ../ram/build/human/11_ram2_out.paf tax_cleaned_results4/ra
 ../../software/clark/cgmemtime/cgmemtime -o custom/10_ram2_time ./bin/ram --minhash --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/10_zymo_ont.fastq > custom/10_ram2_out.paf
 ../../software/clark/cgmemtime/cgmemtime -o custom/11_ram2_time ./bin/ram --minhash -k 29 -w 9 --threads 12 ../../truth_database/bacteria_arachea_lib.fna ../../seqs/11_SRR11606871_subsampled.fastq > custom/11_ram2_out.paf
 
-python paf_to_file.py ../ram/build/custom/01_ram2_out.paf tax_cleaned_results4/ram/custom2_1.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/02_ram2_out.paf tax_cleaned_results4/ram/custom2_2.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/03_ram2_out.paf tax_cleaned_results4/ram/custom2_3.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/04_ram2_out.paf tax_cleaned_results4/ram/custom2_4.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/05_ram2_out.paf tax_cleaned_results4/ram/custom2_5.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/06_ram2_out.paf tax_cleaned_results4/ram/custom2_6.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/08_ram2_out.paf tax_cleaned_results4/ram/custom2_8.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/09_ram2_out.paf tax_cleaned_results4/ram/custom2_9.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/10_ram2_out.paf tax_cleaned_results4/ram/custom2_10.f2 nodes.dmp
-python paf_to_file.py ../ram/build/custom/11_ram2_out.paf tax_cleaned_results4/ram/custom2_11.f2 nodes.dmp
+
+DE SAMBA
+
+../../software/clark/cgmemtime/cgmemtime -o custom_results/01_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -o custom_results/human_1.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/02_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/02_silico-30p-human-70p-bac.fastq -o custom_results/human_2.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/03_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/03_silico-10-bacteria-100k-reads.fasta -o custom_results/human_3.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/04_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -o custom_results/human_4.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/05_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/05_human-pathogen.fastq -o custom_results/human_5.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/06_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/06_50-bac-100k.fastq -o custom_results/human_6.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/08_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta -o custom_results/human_8.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/09_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/09_zymo_pacbio.fastq -o custom_results/human_9.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/10_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/10_zymo_ont.fastq -o custom_results/human_10.sam
+../../software/clark/cgmemtime/cgmemtime -o custom_results/11_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 custom ../../seqs/11_SRR11606871_subsampled.fastq -o custom_results/human_11.sam
+
+../../software/clark/cgmemtime/cgmemtime -o human_results/01_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/01_Mock_100000-bacteria-l1000-q10.fastq -o human_results/human_1.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/02_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/02_silico-30p-human-70p-bac.fastq -o human_results/human_2.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/03_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/03_silico-10-bacteria-100k-reads.fasta -o human_results/human_3.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/04_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/04_silico-3-euka-bac-100k-reads.fastq -o human_results/human_4.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/05_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/05_human-pathogen.fastq -o human_results/human_5.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/06_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/06_50-bac-100k.fastq -o human_results/human_6.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/08_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/08_negative2_10bac_shuffled_human_20k.fasta -o human_results/human_8.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/09_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/09_zymo_pacbio.fastq -o human_results/human_9.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/10_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/10_zymo_ont.fastq -o human_results/human_10.sam
+../../software/clark/cgmemtime/cgmemtime -o human_results/11_deSAMBA_time ./bin/deSAMBA classify -t 12 -r 0 human ../../seqs/11_SRR11606871_subsampled.fastq -o human_results/human_11.sam
+
+
+###### GUT DATASETS
+
+../software/clark/cgmemtime/cgmemtime -o kraken/20_human_time ../software/kraken2/kraken2 --threads 32 --db ../databases/kraken_human_2 ../seqs/20_Sample10_ONT_ERR3201941.fastq --report kraken/human2_20.report > kraken/human2_20
+../software/clark/cgmemtime/cgmemtime -o kraken/21_human_time ../software/kraken2/kraken2 --threads 32 --db ../databases/kraken_human_2 ../seqs/21_Sample20_ONT_ERR3201951.fastq --report kraken/human2_21.report > kraken/human2_21
+../software/clark/cgmemtime/cgmemtime -o kraken/22_human_time ../software/kraken2/kraken2 --threads 32 --db ../databases/kraken_human_2 ../seqs/22_Sample21_ONT_ERR3201952.fastq --report kraken/human2_22.report > kraken/human2_22
+
+../software/clark/cgmemtime/cgmemtime -o kraken/20_custom_time ../software/kraken2/kraken2 --threads 32 --db ../databases/kraken_custom ../seqs/20_Sample10_ONT_ERR3201941.fastq --report kraken/custom2_20.report > kraken/custom2_20
+../software/clark/cgmemtime/cgmemtime -o kraken/21_custom_time ../software/kraken2/kraken2 --threads 32 --db ../databases/kraken_custom ../seqs/21_Sample20_ONT_ERR3201951.fastq --report kraken/custom2_21.report > kraken/custom2_21
+../software/clark/cgmemtime/cgmemtime -o kraken/22_custom_time ../software/kraken2/kraken2 --threads 32 --db ../databases/kraken_custom ../seqs/22_Sample21_ONT_ERR3201952.fastq --report kraken/custom2_22.report > kraken/custom2_22
+
+../software/clark/cgmemtime/cgmemtime -o centrifuge/20_human_time ../software/centrifuge/centrifuge -x ../software/centrifuge/g_human/human -k 1 -p 32 -q ../seqs/20_Sample10_ONT_ERR3201941.fastq -S centrifuge/human2_20 --report-file centrifuge/human2_20.report
+../software/clark/cgmemtime/cgmemtime -o centrifuge/21_human_time ../software/centrifuge/centrifuge -x ../software/centrifuge/g_human/human -k 1 -p 32 -q ../seqs/21_Sample20_ONT_ERR3201951.fastq -S centrifuge/human2_21 --report-file centrifuge/human2_21.report
+../software/clark/cgmemtime/cgmemtime -o centrifuge/22_human_time ../software/centrifuge/centrifuge -x ../software/centrifuge/g_human/human -k 1 -p 32 -q ../seqs/22_Sample21_ONT_ERR3201952.fastq -S centrifuge/human2_22 --report-file centrifuge/human2_22.report
+
+../software/clark/cgmemtime/cgmemtime -o centrifuge/20_custom_time ../software/centrifuge/centrifuge -x ../software/centrifuge/g2_custom/custom -k 1 -p 32 -q ../seqs/20_Sample10_ONT_ERR3201941.fastq -S centrifuge/custom2_20 --report-file centrifuge/custom2_20.report
+../software/clark/cgmemtime/cgmemtime -o centrifuge/21_custom_time ../software/centrifuge/centrifuge -x ../software/centrifuge/g2_custom/custom -k 1 -p 32 -q ../seqs/21_Sample20_ONT_ERR3201951.fastq -S centrifuge/custom2_21 --report-file centrifuge/custom2_21.report
+../software/clark/cgmemtime/cgmemtime -o centrifuge/22_custom_time ../software/centrifuge/centrifuge -x ../software/centrifuge/g2_custom/custom -k 1 -p 32 -q ../seqs/22_Sample21_ONT_ERR3201952.fastq -S centrifuge/custom2_22 --report-file centrifuge/custom2_22.report
+
+../software/clark/cgmemtime/cgmemtime -o clark/20_human_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/20_Sample10_ONT_ERR3201941.fastq -R clark/human2_20
+../software/clark/cgmemtime/cgmemtime -o clark/21_human_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/21_Sample20_ONT_ERR3201951.fastq -R clark/human2_21
+../software/clark/cgmemtime/cgmemtime -o clark/22_human_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/22_Sample21_ONT_ERR3201952.fastq -R clark/human2_22
+
+../software/clark/cgmemtime/cgmemtime -o clark-s/20_human_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/20_Sample10_ONT_ERR3201941.fastq -R clark-s/human2_20 --spaced
+../software/clark/cgmemtime/cgmemtime -o clark-s/21_human_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/21_Sample20_ONT_ERR3201951.fastq -R clark-s/human2_21 --spaced
+../software/clark/cgmemtime/cgmemtime -o clark-s/22_human_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/22_Sample21_ONT_ERR3201952.fastq -R clark-s/human2_22 --spaced
+
+../software/clark/cgmemtime/cgmemtime -o clark/20_custom_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/20_Sample10_ONT_ERR3201941.fastq -R clark/custom2_20
+../software/clark/cgmemtime/cgmemtime -o clark/21_custom_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/21_Sample20_ONT_ERR3201951.fastq -R clark/custom2_21
+../software/clark/cgmemtime/cgmemtime -o clark/22_custom_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/22_Sample21_ONT_ERR3201952.fastq -R clark/custom2_22
+
+../software/clark/cgmemtime/cgmemtime -o clark-s/20_custom_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/20_Sample10_ONT_ERR3201941.fastq -R clark-s/custom2_20 --spaced
+../software/clark/cgmemtime/cgmemtime -o clark-s/21_custom_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/21_Sample20_ONT_ERR3201951.fastq -R clark-s/custom2_21 --spaced
+../software/clark/cgmemtime/cgmemtime -o clark-s/22_custom_time ../software/clark/classify_metagenome.sh -n 32 -O ../seqs/22_Sample21_ONT_ERR3201952.fastq -R clark-s/custom2_22 --spaced
+
+../software/clark/cgmemtime/cgmemtime -o minimap2Aln/20_human_time ../minimap2/minimap2 -ax map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/20_Sample10_ONT_ERR3201941.fastq > minimap2Aln/human2_20.sam
+../software/clark/cgmemtime/cgmemtime -o minimap2Aln/21_human_time ../minimap2/minimap2 -ax map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/21_Sample20_ONT_ERR3201951.fastq > minimap2Aln/human2_21.sam
+../software/clark/cgmemtime/cgmemtime -o minimap2Aln/22_human_time ../minimap2/minimap2 -ax map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/22_Sample21_ONT_ERR3201952.fastq > minimap2Aln/human2_22.sam
+
+../software/clark/cgmemtime/cgmemtime -o minimap2Aln/20_custom_time ../minimap2/minimap2 -ax map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/20_Sample10_ONT_ERR3201941.fastq > minimap2Aln/custom2_20.sam
+../software/clark/cgmemtime/cgmemtime -o minimap2Aln/21_custom_time ../minimap2/minimap2 -ax map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/21_Sample20_ONT_ERR3201951.fastq > minimap2Aln/custom2_21.sam
+../software/clark/cgmemtime/cgmemtime -o minimap2Aln/22_custom_time ../minimap2/minimap2 -ax map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/22_Sample21_ONT_ERR3201952.fastq > minimap2Aln/custom2_22.sam
+
+../software/clark/cgmemtime/cgmemtime -o minimap2/20_human_time ../minimap2/minimap2 -x map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/20_Sample10_ONT_ERR3201941.fastq > minimap2/human2_20.sam
+../software/clark/cgmemtime/cgmemtime -o minimap2/21_human_time ../minimap2/minimap2 -x map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/21_Sample20_ONT_ERR3201951.fastq > minimap2/human2_21.sam
+../software/clark/cgmemtime/cgmemtime -o minimap2/22_human_time ../minimap2/minimap2 -x map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_human_lib.fna ../seqs/22_Sample21_ONT_ERR3201952.fastq > minimap2/human2_22.sam
+
+../software/clark/cgmemtime/cgmemtime -o minimap2/20_custom_time ../minimap2/minimap2 -x map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/20_Sample10_ONT_ERR3201941.fastq > minimap2/custom2_20.sam
+../software/clark/cgmemtime/cgmemtime -o minimap2/21_custom_time ../minimap2/minimap2 -x map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/21_Sample20_ONT_ERR3201951.fastq > minimap2/custom2_21.sam
+../software/clark/cgmemtime/cgmemtime -o minimap2/22_custom_time ../minimap2/minimap2 -x map-ont -t 32 --secondary=no --sam-hit-only ../truth_database/bacteria_arachea_lib.fna ../seqs/22_Sample21_ONT_ERR3201952.fastq > minimap2/custom2_22.sam
+
+../software/clark/cgmemtime/cgmemtime -o ram/20_human_time ../ram/build/bin/ram --minhash --threads 32 ../truth_database/bacteria_arachea_human_lib.fna ../seqs/20_Sample10_ONT_ERR3201941.fastq > ram/human2_20.paf
+../software/clark/cgmemtime/cgmemtime -o ram/21_human_time ../ram/build/bin/ram --minhash --threads 32 ../truth_database/bacteria_arachea_human_lib.fna ../seqs/21_Sample20_ONT_ERR3201951.fastq > ram/human2_21.paf
+../software/clark/cgmemtime/cgmemtime -o ram/22_human_time ../ram/build/bin/ram --minhash --threads 32 ../truth_database/bacteria_arachea_human_lib.fna ../seqs/22_Sample21_ONT_ERR3201952.fastq > ram/human2_22.paf
+
+../software/clark/cgmemtime/cgmemtime -o ram/20_custom_time ../ram/build/bin/ram --minhash --threads 32 ../truth_database/bacteria_arachea_lib.fna ../seqs/20_Sample10_ONT_ERR3201941.fastq > ram/custom2_20.paf
+../software/clark/cgmemtime/cgmemtime -o ram/21_custom_time ../ram/build/bin/ram --minhash --threads 32 ../truth_database/bacteria_arachea_lib.fna ../seqs/21_Sample20_ONT_ERR3201951.fastq > ram/custom2_21.paf
+../software/clark/cgmemtime/cgmemtime -o ram/22_custom_time ../ram/build/bin/ram --minhash --threads 32 ../truth_database/bacteria_arachea_lib.fna ../seqs/22_Sample21_ONT_ERR3201952.fastq > ram/custom2_22.paf
+
+../software/clark/cgmemtime/cgmemtime -o deSamba/20_human_time ../software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/human ../seqs/20_Sample10_ONT_ERR3201941.fastq -o deSamba/human2_20.sam
+../software/clark/cgmemtime/cgmemtime -o deSamba/21_human_time ../software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/human ../seqs/21_Sample20_ONT_ERR3201951.fastq -o deSamba/human2_21.sam
+../software/clark/cgmemtime/cgmemtime -o deSamba/22_human_time ../software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/human ../seqs/22_Sample21_ONT_ERR3201952.fastq -o deSamba/human2_22.sam
+
+../software/clark/cgmemtime/cgmemtime -o deSamba/20_custom_time ../software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/custom ../seqs/20_Sample10_ONT_ERR3201941.fastq -o deSamba/custom2_20.sam
+../software/clark/cgmemtime/cgmemtime -o deSamba/21_custom_time ../software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/custom ../seqs/21_Sample20_ONT_ERR3201951.fastq -o deSamba/custom2_21.sam
+../software/clark/cgmemtime/cgmemtime -o deSamba/22_custom_time ../software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/custom ../seqs/22_Sample21_ONT_ERR3201952.fastq -o deSamba/custom2_22.sam
+
+../software/clark/cgmemtime/cgmemtime -o kaiju/20_human_time ~/software/kaiju/bin/kaiju -z 32 -t ~/benchmark/nodes.dmp -f ~/software/kaiju/kaiju_human.fmi -i ~/seqs/20_Sample10_ONT_ERR3201941.fastq -o kaiju/human2_20
+../software/clark/cgmemtime/cgmemtime -o kaiju/21_human_time ~/software/kaiju/bin/kaiju -z 32 -t ~/benchmark/nodes.dmp -f ~/software/kaiju/kaiju_human.fmi -i ~/seqs/21_Sample20_ONT_ERR3201951.fastq -o kaiju/human2_21
+../software/clark/cgmemtime/cgmemtime -o kaiju/22_human_time ~/software/kaiju/bin/kaiju -z 32 -t ~/benchmark/nodes.dmp -f ~/software/kaiju/kaiju_human.fmi -i ~/seqs/22_Sample21_ONT_ERR3201952.fastq -o kaiju/human2_22
+
+../software/clark/cgmemtime/cgmemtime -o kaiju/20_custom_time ~/software/kaiju/bin/kaiju -z 32 -t ~/benchmark/nodes.dmp -f ~/software/kaiju/kaiju_custom.fmi -i ~/seqs/20_Sample10_ONT_ERR3201941.fastq -o kaiju/custom2_20
+../software/clark/cgmemtime/cgmemtime -o kaiju/21_custom_time ~/software/kaiju/bin/kaiju -z 32 -t ~/benchmark/nodes.dmp -f ~/software/kaiju/kaiju_custom.fmi -i ~/seqs/21_Sample20_ONT_ERR3201951.fastq -o kaiju/custom2_21
+../software/clark/cgmemtime/cgmemtime -o kaiju/22_custom_time ~/software/kaiju/bin/kaiju -z 32 -t ~/benchmark/nodes.dmp -f ~/software/kaiju/kaiju_custom.fmi -i ~/seqs/22_Sample21_ONT_ERR3201952.fastq -o kaiju/custom2_22
+
+~/software/clark/cgmemtime/cgmemtime -o metamaps/20_human_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/human/DB.fa -q ~/seqs/20_Sample10_ONT_ERR3201941.fastq --maxmemory 250 -o metamaps/human2_20
+~/software/clark/cgmemtime/cgmemtime -o metamaps/21_human_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/human/DB.fa -q ~/seqs/21_Sample20_ONT_ERR3201951.fastq --maxmemory 250 -o metamaps/human2_21
+~/software/clark/cgmemtime/cgmemtime -o metamaps/22_human_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/human/DB.fa -q ~/seqs/22_Sample21_ONT_ERR3201952.fastq --maxmemory 250 -o metamaps/human2_22
+
+~/software/clark/cgmemtime/cgmemtime -o metamaps/20_custom_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/custom_4/DB.fa -q ~/seqs/20_Sample10_ONT_ERR3201941.fastq --maxmemory 250 -o metamaps/custom2_20
+~/software/clark/cgmemtime/cgmemtime -o metamaps/21_custom_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/custom_4/DB.fa -q ~/seqs/21_Sample20_ONT_ERR3201951.fastq --maxmemory 250 -o metamaps/custom2_21
+~/software/clark/cgmemtime/cgmemtime -o metamaps/22_custom_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/custom_4/DB.fa -q ~/seqs/22_Sample21_ONT_ERR3201952.fastq --maxmemory 300 -o metamaps/custom2_22
+
+~/software/clark/cgmemtime/cgmemtime -o metamaps/20_human_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/human2_20 --DB ~/software/newMeta/MetaMaps/baza_g3/human
+~/software/clark/cgmemtime/cgmemtime -o metamaps/21_human_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/human2_21 --DB ~/software/newMeta/MetaMaps/baza_g3/human
+~/software/clark/cgmemtime/cgmemtime -o metamaps/22_human_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/human2_22 --DB ~/software/newMeta/MetaMaps/baza_g3/human
+
+~/software/clark/cgmemtime/cgmemtime -o metamaps/20_custom_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/custom2_20 --DB ~/software/newMeta/MetaMaps/baza_g3/custom_4
+~/software/clark/cgmemtime/cgmemtime -o metamaps/21_custom_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/custom2_21 --DB ~/software/newMeta/MetaMaps/baza_g3/custom_4
+~/software/clark/cgmemtime/cgmemtime -o metamaps/22_custom_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/custom2_22 --DB ~/software/newMeta/MetaMaps/baza_g3/custom_4
+
+~/software/clark/cgmemtime/cgmemtime -o bracken/20_human_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_human_2/ -t 32 -l 1999 -x ~/software/kraken2/
+~/software/clark/cgmemtime/cgmemtime -o bracken/21_human_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_human_2/ -t 32 -l 979 -x ~/software/kraken2/
+~/software/clark/cgmemtime/cgmemtime -o bracken/22_human_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_human_2/ -t 32 -l 1510 -x ~/software/kraken2/
+
+~/software/clark/cgmemtime/cgmemtime -o bracken/20_custom_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_custom/ -t 32 -l 1999 -x ~/software/kraken2/
+~/software/clark/cgmemtime/cgmemtime -o bracken/21_custom_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_custom/ -t 32 -l 979 -x ~/software/kraken2/
+~/software/clark/cgmemtime/cgmemtime -o bracken/22_custom_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_custom/ -t 32 -l 1510 -x ~/software/kraken2/
+
+
+# KRAKEN:
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kraken/23_human_time ~/software/kraken2/kraken2 --threads 32 --db ~/databases/kraken_human_2 ~/seqs/23_SRR15489011.fastq --report kraken/human2_23.report > kraken/human2_23
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kraken/24_human_time ~/software/kraken2/kraken2 --threads 32 --db ~/databases/kraken_human_2 ~/seqs/24_SRR15489017.fastq --report kraken/human2_24.report > kraken/human2_24
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kraken/25_human_time ~/software/kraken2/kraken2 --threads 32 --db ~/databases/kraken_human_2 ~/seqs/25_SRR15489009.fastq --report kraken/human2_25.report > kraken/human2_25
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kraken/23_custom_time ~/software/kraken2/kraken2 --threads 32 --db ~/databases/kraken_custom ~/seqs/23_SRR15489011.fastq --report kraken/human2_23.report > kraken/custom2_23
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kraken/24_custom_time ~/software/kraken2/kraken2 --threads 32 --db ~/databases/kraken_custom ~/seqs/24_SRR15489017.fastq --report kraken/human2_24.report > kraken/custom2_24
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kraken/25_custom_time ~/software/kraken2/kraken2 --threads 32 --db ~/databases/kraken_custom ~/seqs/25_SRR15489009.fastq --report kraken/human2_25.report > kraken/custom2_25
+
+# CENTRIFUGE:
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o centrifuge/23_human_time ~/software/centrifuge/centrifuge -x ~/software/centrifuge/g_human/human -k 1 -p 32 -q ~/seqs/23_SRR15489011.fastq -S centrifuge/human2_23 --report-file centrifuge/human2_23.report
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o centrifuge/24_human_time ~/software/centrifuge/centrifuge -x ~/software/centrifuge/g_human/human -k 1 -p 32 -q ~/seqs/24_SRR15489017.fastq -S centrifuge/human2_24 --report-file centrifuge/human2_24.report
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o centrifuge/25_human_time ~/software/centrifuge/centrifuge -x ~/software/centrifuge/g_human/human -k 1 -p 32 -q ~/seqs/25_SRR15489009.fastq -S centrifuge/human2_25 --report-file centrifuge/human2_25.report
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o centrifuge/23_custom_time ~/software/centrifuge/centrifuge -x ~/software/centrifuge/g2_custom/custom -k 1 -p 32 -q ~/seqs/23_SRR15489011.fastq -S centrifuge/custom2_23 --report-file centrifuge/custom2_23.report
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o centrifuge/24_custom_time ~/software/centrifuge/centrifuge -x ~/software/centrifuge/g2_custom/custom -k 1 -p 32 -q ~/seqs/24_SRR15489017.fastq -S centrifuge/custom2_24 --report-file centrifuge/custom2_24.report
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o centrifuge/25_custom_time ~/software/centrifuge/centrifuge -x ~/software/centrifuge/g2_custom/custom -k 1 -p 32 -q ~/seqs/25_SRR15489009.fastq -S centrifuge/custom2_25 --report-file centrifuge/custom2_25.report
+
+# CLARK HUMAN:
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark/23_human_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/23_SRR15489011.fastq -R clark/human2_23
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark/24_human_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/24_SRR15489017.fastq -R clark/human2_24
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark/25_human_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/25_SRR15489009.fastq -R clark/human2_25
+
+# CLARK-S HUMAN:
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark-s/23_human_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/23_SRR15489011.fastq -R clark-s/human2_23 --spaced
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark-s/24_human_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/24_SRR15489017.fastq -R clark-s/human2_24 --spaced
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark-s/25_human_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/25_SRR15489009.fastq -R clark-s/human2_25 --spaced
+
+# CLARK CUSTOM:
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark/23_custom_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/23_SRR15489011.fastq -R clark/custom2_23
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark/24_custom_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/24_SRR15489017.fastq -R clark/custom2_24
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark/25_custom_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/25_SRR15489009.fastq -R clark/custom2_25
+
+# CLARK-S CUSTOM:
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark-s/23_custom_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/23_SRR15489011.fastq -R clark-s/custom2_23 --spaced
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark-s/24_custom_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/24_SRR15489017.fastq -R clark-s/custom2_24 --spaced
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o clark-s/25_custom_time ~/software/clark/classify_metagenome.sh -n 32 -O ~/seqs/25_SRR15489009.fastq -R clark-s/custom2_25 --spaced
+
+# MINIMAP2 ALN
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2Aln/23_human_time ~/minimap2/minimap2 -ax map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/23_SRR15489011.fastq > minimap2Aln/human2_23.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2Aln/24_human_time ~/minimap2/minimap2 -ax map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/24_SRR15489017.fastq > minimap2Aln/human2_24.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2Aln/25_human_time ~/minimap2/minimap2 -ax map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/25_SRR15489009.fastq > minimap2Aln/human2_25.sam
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2Aln/23_custom_time ~/minimap2/minimap2 -ax map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_lib.fna ~/seqs/23_SRR15489011.fastq > minimap2Aln/custom2_23.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2Aln/24_custom_time ~/minimap2/minimap2 -ax map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_lib.fna ~/seqs/24_SRR15489017.fastq > minimap2Aln/custom2_24.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2Aln/25_custom_time ~/minimap2/minimap2 -ax map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_lib.fna ~/seqs/25_SRR15489009.fastq > minimap2Aln/custom2_25.sam
+
+# MINIMAP2 MAP
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2/23_human_time ~/minimap2/minimap2 -x map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/23_SRR15489011.fastq > minimap2/human2_23.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2/24_human_time ~/minimap2/minimap2 -x map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/24_SRR15489017.fastq > minimap2/human2_24.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2/25_human_time ~/minimap2/minimap2 -x map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/25_SRR15489009.fastq > minimap2/human2_25.sam
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2/23_custom_time ~/minimap2/minimap2 -x map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_lib.fna ~/seqs/23_SRR15489011.fastq > minimap2/custom2_23.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2/24_custom_time ~/minimap2/minimap2 -x map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_lib.fna ~/seqs/24_SRR15489017.fastq > minimap2/custom2_24.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o minimap2/25_custom_time ~/minimap2/minimap2 -x map-pb -t 32 --secondary=no --sam-hit-only ~/truth_database/bacteria_arachea_lib.fna ~/seqs/25_SRR15489009.fastq > minimap2/custom2_25.sam
+
+# RAM
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o ram/23_human_time ~/ram/build/bin/ram --minhash -k 29 -w 9  --threads 32 ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/23_SRR15489011.fastq > ram/human2_23.paf
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o ram/24_human_time ~/ram/build/bin/ram --minhash -k 29 -w 9  --threads 32 ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/24_SRR15489017.fastq > ram/human2_24.paf
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o ram/25_human_time ~/ram/build/bin/ram --minhash -k 29 -w 9  --threads 32 ~/truth_database/bacteria_arachea_human_lib.fna ~/seqs/25_SRR15489009.fastq > ram/human2_25.paf
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o ram/23_custom_time ~/ram/build/bin/ram --minhash -k 29 -w 9  --threads 32 ~/truth_database/bacteria_arachea_lib.fna ~/seqs/23_SRR15489011.fastq > ram/custom2_23.paf
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o ram/24_custom_time ~/ram/build/bin/ram --minhash -k 29 -w 9  --threads 32 ~/truth_database/bacteria_arachea_lib.fna ~/seqs/24_SRR15489017.fastq > ram/custom2_24.paf
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o ram/25_custom_time ~/ram/build/bin/ram --minhash -k 29 -w 9  --threads 32 ~/truth_database/bacteria_arachea_lib.fna ~/seqs/25_SRR15489009.fastq > ram/custom2_25.paf
+
+# DESAMBA
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o deSamba/23_human_time ~/software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/human ~/seqs/23_SRR15489011.fastq -o deSamba/human2_23.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o deSamba/24_human_time ~/software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/human ~/seqs/24_SRR15489017.fastq -o deSamba/human2_24.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o deSamba/25_human_time ~/software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/human ~/seqs/25_SRR15489009.fastq -o deSamba/human2_25.sam
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o deSamba/23_custom_time ~/software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/custom ~/seqs/23_SRR15489011.fastq -o deSamba/custom2_23.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o deSamba/24_custom_time ~/software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/custom ~/seqs/24_SRR15489017.fastq -o deSamba/custom2_24.sam
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o deSamba/25_custom_time ~/software/deSAMBA/bin/deSAMBA classify -t 32 -r 0 ~/software/deSAMBA/custom ~/seqs/25_SRR15489009.fastq -o deSamba/custom2_25.sam
+
+# KAIJU
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kaiju/23_human_time ~/software/kaiju/bin/kaiju -z 32 -t ~/june_submission/nodes1.dmp -f ~/software/kaiju/kaiju_human.fmi -i ~/seqs/23_SRR15489011.fastq -o kaiju/human2_23
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kaiju/24_human_time ~/software/kaiju/bin/kaiju -z 32 -t ~/june_submission/nodes1.dmp -f ~/software/kaiju/kaiju_human.fmi -i ~/seqs/24_SRR15489017.fastq -o kaiju/human2_24
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kaiju/25_human_time ~/software/kaiju/bin/kaiju -z 32 -t ~/june_submission/nodes1.dmp -f ~/software/kaiju/kaiju_human.fmi -i ~/seqs/25_SRR15489009.fastq -o kaiju/human2_25
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kaiju/23_custom_time ~/software/kaiju/bin/kaiju -z 32 -t ~/june_submission/nodes1.dmp -f ~/software/kaiju/kaiju_custom.fmi -i ~/seqs/23_SRR15489011.fastq -o kaiju/custom2_23
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kaiju/24_custom_time ~/software/kaiju/bin/kaiju -z 32 -t ~/june_submission/nodes1.dmp -f ~/software/kaiju/kaiju_custom.fmi -i ~/seqs/24_SRR15489017.fastq -o kaiju/custom2_24
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o kaiju/25_custom_time ~/software/kaiju/bin/kaiju -z 32 -t ~/june_submission/nodes1.dmp -f ~/software/kaiju/kaiju_custom.fmi -i ~/seqs/25_SRR15489009.fastq -o kaiju/custom2_25
+
+# METAMAPS
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/23_human_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/human/DB.fa -q ~/seqs/23_SRR15489011.fastq --maxmemory 250 -o metamaps/human2_23
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/24_human_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/human/DB.fa -q ~/seqs/24_SRR15489017.fastq --maxmemory 250 -o metamaps/human2_24
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/25_human_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/human/DB.fa -q ~/seqs/25_SRR15489009.fastq --maxmemory 250 -o metamaps/human2_25
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/23_custom_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/custom_4/DB.fa -q ~/seqs/23_SRR15489011.fastq --maxmemory 250 -o metamaps/custom2_23
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/24_custom_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/custom_4/DB.fa -q ~/seqs/24_SRR15489017.fastq --maxmemory 250 -o metamaps/custom2_24
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/25_custom_time ~/software/newMeta/MetaMaps/metamaps mapDirectly --all -t 32 -r ~/software/newMeta/MetaMaps/baza_g3/custom_4/DB.fa -q ~/seqs/25_SRR15489009.fastq --maxmemory 300 -o metamaps/custom2_25
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/23_human_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/human2_23 --DB ~/software/newMeta/MetaMaps/baza_g3/human
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/24_human_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/human2_24 --DB ~/software/newMeta/MetaMaps/baza_g3/human
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/25_human_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/human2_25 --DB ~/software/newMeta/MetaMaps/baza_g3/human
+
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/23_custom_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/custom2_23 --DB ~/software/newMeta/MetaMaps/baza_g3/custom_4
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/24_custom_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/custom2_24 --DB ~/software/newMeta/MetaMaps/baza_g3/custom_4
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+~/software/clark/cgmemtime/cgmemtime -o metamaps/25_custom_time2 ~/software/newMeta/MetaMaps/metamaps classify -t 32 --mappings metamaps/custom2_25 --DB ~/software/newMeta/MetaMaps/baza_g3/custom_4
+
+#BRACKEN
+
+~/software/clark/cgmemtime/cgmemtime -o bracken/23_human_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_human_2/ -t 32 -l 7134 -x ~/software/kraken2/
+~/software/clark/cgmemtime/cgmemtime -o bracken/24_human_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_human_2/ -t 32 -l 6710 -x ~/software/kraken2/
+~/software/clark/cgmemtime/cgmemtime -o bracken/25_human_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_human_2/ -t 32 -l 6698 -x ~/software/kraken2/
+
+~/software/clark/cgmemtime/cgmemtime -o bracken/23_custom_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_custom/ -t 32 -l 7134 -x ~/software/kraken2/
+~/software/clark/cgmemtime/cgmemtime -o bracken/24_custom_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_custom/ -t 32 -l 6710 -x ~/software/kraken2/
+~/software/clark/cgmemtime/cgmemtime -o bracken/25_custom_time ~/software/Bracken-2.5/bracken-build -d ~/databases/kraken_custom/ -t 32 -l 6698 -x ~/software/kraken2/
+
+~/software/clark/cgmemtime/cgmemtime -o bracken/23_human_time2 python ~/software/Bracken-2.5/src/est_abundance.py -i kraken/human2_23.report -k ~/databases/kraken_human_2/database7134mers.kmer_distrib -o bracken/human2_23
+~/software/clark/cgmemtime/cgmemtime -o bracken/24_human_time2 python ~/software/Bracken-2.5/src/est_abundance.py -i kraken/human2_24.report -k ~/databases/kraken_human_2/database6710mers.kmer_distrib -o bracken/human2_24
+~/software/clark/cgmemtime/cgmemtime -o bracken/25_human_time2 python ~/software/Bracken-2.5/src/est_abundance.py -i kraken/human2_25.report -k ~/databases/kraken_human_2/database6698mers.kmer_distrib -o bracken/human2_25
+
+~/software/clark/cgmemtime/cgmemtime -o bracken/23_custom_time2 python ~/software/Bracken-2.5/src/est_abundance.py -i kraken/custom2_23.report -k ~/databases/kraken_custom/database7134mers.kmer_distrib -o bracken/custom2_23
+~/software/clark/cgmemtime/cgmemtime -o bracken/24_custom_time2 python ~/software/Bracken-2.5/src/est_abundance.py -i kraken/custom2_24.report -k ~/databases/kraken_custom/database6710mers.kmer_distrib -o bracken/custom2_24
+~/software/clark/cgmemtime/cgmemtime -o bracken/25_custom_time2 python ~/software/Bracken-2.5/src/est_abundance.py -i kraken/custom2_25.report -k ~/databases/kraken_custom/database6698mers.kmer_distrib -o bracken/custom2_25
+
 
